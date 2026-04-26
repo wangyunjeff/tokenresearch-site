@@ -1,18 +1,15 @@
-import type { ReactNode } from "react"
+import * as React from "react"
 
-type SectionProps = {
-  id?: string
-  className?: string
-  children: ReactNode
-}
+import { cn } from "@/lib/utils"
 
-export function Section({ id, className = "", children }: SectionProps) {
+function Section({ className, ...props }: React.ComponentProps<"section">) {
   return (
     <section
-      id={id}
-      className={`mx-auto w-full max-w-6xl px-6 py-16 md:px-8 md:py-24 ${className}`.trim()}
-    >
-      {children}
-    </section>
+      data-slot="section"
+      className={cn("line-b px-4 py-12 sm:py-24 md:py-32", className)}
+      {...props}
+    />
   )
 }
+
+export { Section }

@@ -1,11 +1,12 @@
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+
 export const metadata: Metadata = {
-  title: "TokenResearch | Research & Engineering Workflow Advisory",
+  title: "TokenResearch",
   description:
-    "TokenResearch builds bilingual brand and service experiences for research and engineering workflow advisory, SOP design, and high-value service coordination.",
+    "AI-native research workspace for literature review, experimentation, skills, and reproducible reporting.",
 }
 
 export default function RootLayout({
@@ -14,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="zh" suppressHydrationWarning>
-      <body>
+    <html lang="en" suppressHydrationWarning className="font-sans antialiased">
+      <body className="dark bg-background text-foreground">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -1,34 +1,74 @@
-import type { SiteContent } from "@/content/site"
-import { Section } from "@/components/ui/section"
+import { type VariantProps } from "class-variance-authority"
+import { ReactNode } from "react"
 
-type CTAProps = {
-  content: SiteContent
+import { cn } from "@/lib/utils"
+
+import { Button, buttonVariants } from "../../ui/button"
+import Glow from "../../ui/glow"
+import { Section } from "../../ui/section"
+
+interface CTAButtonProps {
+  href: string
+  text: string
+  variant?: VariantProps<typeof buttonVariants>["variant"]
+  icon?: ReactNode
+  iconRight?: ReactNode
 }
 
-export default function CTA({ content }: CTAProps) {
+interface CTAProps {
+  title?: string
+  description?: string
+  buttons?: CTAButtonProps[] | false
+  className?: string
+}
+
+export default function CTA({
+  title = "Ready to turn this draft into the final TokenResearch launch page?",
+  description = "The structure now holds the mission, product story, skill library, and team placeholders. The remaining work is mostly asset replacement: portraits, links, case studies, and polished launch media.",
+  buttons = [
+    {
+      href: "#team",
+      text: "Review team placeholders",
+      variant: "default",
+    },
+    {
+      href: "#footer",
+      text: "See missing info slots",
+      variant: "outline",
+    },
+  ],
+  className,
+}: CTAProps) {
   return (
-    <Section id="cta">
-      <div className="rounded-[30px] border border-[#2563EB]/18 bg-white/88 p-8 shadow-[var(--shadow)] md:p-10">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div className="space-y-4">
-            <div className="text-sm font-medium text-[#2563EB]">Contact</div>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">{content.cta.title}</h2>
-            <p className="max-w-3xl text-lg leading-8 text-black/64">{content.cta.description}</p>
+    <Section className={cn("group relative overflow-hidden", className)}>
+      <div className="relative z-10 mx-auto flex max-w-container flex-col items-center gap-6 text-center sm:gap-8">
+        <h2 className="max-w-[760px] font-[family-name:var(--font-display)] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+          {title}
+        </h2>
+        <p className="max-w-[760px] text-base leading-8 text-muted-foreground sm:text-lg">
+          {description}
+        </p>
+        {buttons !== false && buttons.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-4">
+            {buttons.map((button, index) => (
+              <Button
+                key={index}
+                variant={button.variant || "default"}
+                size="lg"
+                asChild
+              >
+                <a href={button.href}>
+                  {button.icon}
+                  {button.text}
+                  {button.iconRight}
+                </a>
+              </Button>
+            ))}
           </div>
-          <div className="rounded-[24px] border border-black/8 bg-[#111111] p-6 text-white">
-            <div className="text-sm font-medium text-white/56">{content.brand.domain}</div>
-            <div className="mt-3 text-2xl font-semibold">{content.brand.tagline}</div>
-            <a
-              href={content.cta.buttonHref}
-              className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/90"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {content.cta.buttonText}
-            </a>
-            <p className="mt-4 text-sm leading-7 text-white/60">{content.cta.note}</p>
-          </div>
-        </div>
+        )}
+      </div>
+      <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
+        <Glow variant="bottom" />
       </div>
     </Section>
   )

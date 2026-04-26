@@ -38,9 +38,8 @@ pnpm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local workspace artifacts
 .superpowers/
-
-# local/reproduction artifacts
 /repro/
 /docs/superpowers/
 /ChatGPT Image*.png
