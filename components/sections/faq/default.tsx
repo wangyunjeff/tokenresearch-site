@@ -16,12 +16,14 @@ interface FAQItemProps {
 }
 
 interface FAQProps {
+  badgeLabel?: string
   title?: string
-  items?: FAQItemProps[] | false
+  items?: readonly FAQItemProps[] | false
   className?: string
 }
 
 export default function FAQ({
+  badgeLabel = "FAQ",
   title = "Questions that matter for the launch page",
   items = [
     {
@@ -112,7 +114,7 @@ export default function FAQ({
             variant="outline"
             className="border-brand/30 bg-brand/10 text-brand"
           >
-            FAQ
+            {badgeLabel}
           </Badge>
           <h2 className="text-center font-[family-name:var(--font-display)] text-3xl font-semibold sm:text-5xl">
             {title}

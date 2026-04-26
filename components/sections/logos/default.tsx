@@ -19,7 +19,7 @@ interface WorkflowStep {
 interface LogosProps {
   title?: string
   badge?: ReactNode | false
-  steps?: WorkflowStep[] | false
+  steps?: readonly WorkflowStep[] | false
   className?: string
 }
 

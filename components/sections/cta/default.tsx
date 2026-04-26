@@ -18,22 +18,22 @@ interface CTAButtonProps {
 interface CTAProps {
   title?: string
   description?: string
-  buttons?: CTAButtonProps[] | false
+  buttons?: readonly CTAButtonProps[] | false
   className?: string
 }
 
 export default function CTA({
-  title = "Ready to turn this draft into the final TokenResearch launch page?",
-  description = "The structure now holds the mission, product story, skill library, and team placeholders. The remaining work is mostly asset replacement: portraits, links, case studies, and polished launch media.",
+  title = "Ready to move from curiosity to evidence at thought speed?",
+  description = "TokenResearch is designed for researchers who want to ask sharper questions, release agents on the execution layer, and keep the final judgment in human hands.",
   buttons = [
     {
-      href: "#team",
-      text: "Review team placeholders",
+      href: "#product-ui",
+      text: "Start researching",
       variant: "default",
     },
     {
-      href: "#footer",
-      text: "See missing info slots",
+      href: "#mission",
+      text: "Read the mission",
       variant: "outline",
     },
   ],

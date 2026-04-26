@@ -22,7 +22,7 @@ interface ItemProps {
 interface ItemsProps {
   title?: string
   description?: string | false
-  items?: ItemProps[] | false
+  items?: readonly ItemProps[] | false
   className?: string
 }
 

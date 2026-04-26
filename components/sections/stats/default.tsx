@@ -8,7 +8,7 @@ interface StatItemProps {
 }
 
 interface StatsProps {
-  items?: StatItemProps[] | false
+  items?: readonly StatItemProps[] | false
   className?: string
 }
 

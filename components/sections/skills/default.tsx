@@ -4,20 +4,32 @@ import { Section } from "../../ui/section"
 interface SkillCard {
   name: string
   description: string
-  tags: string[]
+  tags: readonly string[]
   version: string
 }
 
 interface SkillsProps {
+  badgeLabel?: string
   title?: string
   description?: string
-  skills?: SkillCard[] | false
+  skills?: readonly SkillCard[] | false
+  officialLabel?: string
+  placeholderBadge?: string
+  placeholderTitle?: string
+  placeholderDescription?: string
+  placeholderNote?: string
   className?: string
 }
 
 export default function Skills({
+  badgeLabel = "Skill library",
   title = "Academic skills already in the library",
   description = "These cards translate research know-how into reusable procedures. The grid is intentionally expandable, so new skills, screenshots, or category tags can be added later without redesigning the page.",
+  officialLabel = "Official",
+  placeholderBadge = "Placeholder",
+  placeholderTitle = "Next academic skill",
+  placeholderDescription = "Leave this card for the next research workflow, benchmark pack, or domain-specific SOP that you want to surface publicly.",
+  placeholderNote = "Add future skill name, one-line summary, tags, and version here.",
   skills = [
     {
       name: "ml-paper-writing",
@@ -118,7 +130,7 @@ export default function Skills({
             variant="outline"
             className="border-brand/30 bg-brand/10 text-brand"
           >
-            Skill library
+            {badgeLabel}
           </Badge>
           <h2 className="font-[family-name:var(--font-display)] text-3xl leading-tight font-semibold text-balance sm:text-5xl">
             {title}
@@ -140,7 +152,7 @@ export default function Skills({
                     variant="outline"
                     className="border-brand/25 bg-brand/10 text-brand"
                   >
-                    Official
+                    {officialLabel}
                   </Badge>
                   <span className="text-xs font-medium text-muted-foreground">
                     {skill.version}
@@ -170,17 +182,16 @@ export default function Skills({
                 variant="outline"
                 className="border-brand/25 bg-brand/10 text-brand"
               >
-                Placeholder
+                {placeholderBadge}
               </Badge>
               <h3 className="mt-5 text-xl leading-tight font-semibold">
-                Next academic skill
+                {placeholderTitle}
               </h3>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                Leave this card for the next research workflow, benchmark pack,
-                or domain-specific SOP that you want to surface publicly.
+                {placeholderDescription}
               </p>
               <div className="mt-5 rounded-[1.25rem] border border-dashed border-border/70 p-4 text-sm text-muted-foreground">
-                Add future skill name, one-line summary, tags, and version here.
+                {placeholderNote}
               </div>
             </article>
           </div>

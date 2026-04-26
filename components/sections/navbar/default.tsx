@@ -1,10 +1,12 @@
-import { Menu } from "lucide-react"
+import { ArrowRight, Menu } from "lucide-react"
 import { ReactNode } from "react"
 
 import { cn } from "@/lib/utils"
 
-import TokenResearch from "../../logos/tokenresearch"
+import BrandLogo from "../../brand-logo"
 import { Button } from "../../ui/button"
+import { LanguageToggle } from "../../ui/language-toggle"
+import { ModeToggle } from "../../ui/mode-toggle"
 import {
   Navbar as NavbarComponent,
   NavbarCenter,
@@ -22,20 +24,24 @@ interface NavbarProps {
   logo?: ReactNode
   name?: string
   homeUrl?: string
-  links?: NavbarLink[]
+  links?: readonly NavbarLink[]
+  dashboardLabel?: string
+  menuLabel?: string
   className?: string
 }
 
 export default function Navbar({
-  logo = <TokenResearch className="size-7 text-brand" />,
   name = "TokenResearch",
+  logo = <BrandLogo name={name} logoAlt={`${name} logo`} size={30} priority />,
   homeUrl = "#top",
   links = [
     { text: "Mission", href: "#mission" },
-    { text: "Capabilities", href: "#capabilities" },
+    { text: "Perspectives", href: "#capabilities" },
+    { text: "Publications", href: "#skills" },
     { text: "Skills", href: "#skills" },
-    { text: "Team", href: "#team" },
   ],
+  dashboardLabel = "Dashboard",
+  menuLabel = "Toggle navigation menu",
   className,
 }: NavbarProps) {
   return (
@@ -46,14 +52,13 @@ export default function Navbar({
           <NavbarLeft className="gap-3">
             <a
               href={homeUrl}
-              className="flex items-center gap-3 text-xl font-bold"
+              className="flex items-center text-xl font-bold"
             >
               {logo}
-              <span>{name}</span>
             </a>
           </NavbarLeft>
 
-          <NavbarCenter className="hidden gap-6 md:flex">
+          <NavbarCenter className="hidden gap-6 lg:flex">
             {links.map((link) => (
               <a
                 key={link.text}
@@ -66,16 +71,15 @@ export default function Navbar({
           </NavbarCenter>
 
           <NavbarRight>
-            <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className="hidden md:inline-flex"
-            >
-              <a href="#skills">Browse Skills</a>
-            </Button>
-            <Button size="sm" asChild className="hidden md:inline-flex">
-              <a href="#mission">Read the Mission</a>
+            <div className="hidden items-center gap-1 lg:flex">
+              <LanguageToggle />
+              <ModeToggle />
+            </div>
+            <Button size="sm" asChild className="hidden lg:inline-flex">
+              <a href="#product-ui">
+                {dashboardLabel}
+                <ArrowRight className="size-4" />
+              </a>
             </Button>
 
             <Sheet>
@@ -83,20 +87,19 @@ export default function Navbar({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="shrink-0 md:hidden"
+                  className="shrink-0 lg:hidden"
                 >
                   <Menu className="size-5" />
-                  <span className="sr-only">Toggle navigation menu</span>
+                  <span className="sr-only">{menuLabel}</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
                 <div className="grid gap-8 pt-6">
                   <a
                     href={homeUrl}
-                    className="flex items-center gap-3 text-xl font-bold"
+                    className="flex items-center text-xl font-bold"
                   >
                     {logo}
-                    <span>{name}</span>
                   </a>
                   <nav className="grid gap-4 text-base font-medium">
                     {links.map((link) => (
@@ -110,11 +113,15 @@ export default function Navbar({
                     ))}
                   </nav>
                   <div className="grid gap-3">
-                    <Button variant="outline" asChild>
-                      <a href="#skills">Browse Skills</a>
-                    </Button>
+                    <div className="flex items-center gap-2">
+                      <LanguageToggle />
+                      <ModeToggle />
+                    </div>
                     <Button asChild>
-                      <a href="#mission">Read the Mission</a>
+                      <a href="#product-ui">
+                        {dashboardLabel}
+                        <ArrowRight className="size-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>

@@ -12,38 +12,43 @@ interface TeamMember {
 }
 
 interface TeamProps {
+  badgeLabel?: string
   title?: string
   description?: string
-  members?: TeamMember[] | false
+  members?: readonly TeamMember[] | false
+  launchSlots?: readonly string[]
+  launchSlotDescription?: string
   className?: string
 }
 
 export default function Team({
+  badgeLabel = "Team and launch assets",
   title = "Meet the founding team",
   description = "The founding team profiles are now in place, with room to expand bios, links, and launch materials as the site evolves.",
   members = [
     {
-      name: "Luoxiao Yang",
-      title: "Founder",
-      note: "Profile details can be expanded here when the final short bio is ready.",
-      imageSrc: "/team/luoxiao-yang.svg",
-      imageAlt: "Portrait illustration of Luoxiao Yang",
-    },
-    {
       name: "Yun Wang",
       title: "Founder",
       note: "Profile details can be expanded here when the final short bio is ready.",
-      imageSrc: "/team/yun-wang.svg",
+      imageSrc: "/team/yun-wang.png",
       imageAlt: "Portrait illustration of Yun Wang",
     },
+    {
+      name: "Luoxiao Yang",
+      title: "Founder",
+      note: "Profile details can be expanded here when the final short bio is ready.",
+      imageSrc: "/team/luoxiao-yang.png",
+      imageAlt: "Portrait illustration of Luoxiao Yang",
+    },
   ],
-  className,
-}: TeamProps) {
-  const launchSlots = [
+  launchSlots = [
     "Case study cover placeholder",
     "Institution or partner logo strip placeholder",
     "Press quote or testimonial placeholder",
-  ]
+  ],
+  launchSlotDescription = "Reserve this block for additional launch credibility assets when you have the final image or copy.",
+  className,
+}: TeamProps) {
 
   return (
     <Section id="team" className={className}>
@@ -53,7 +58,7 @@ export default function Team({
             variant="outline"
             className="border-brand/30 bg-brand/10 text-brand"
           >
-            Team and launch assets
+            {badgeLabel}
           </Badge>
           <h2 className="font-[family-name:var(--font-display)] text-3xl leading-tight font-semibold sm:text-5xl">
             {title}
@@ -75,8 +80,8 @@ export default function Team({
                     <Image
                       src={member.imageSrc}
                       alt={member.imageAlt ?? `${member.name} portrait`}
-                      width={900}
-                      height={1200}
+                      width={1122}
+                      height={1402}
                       className="aspect-[4/3] h-full w-full object-contain object-center"
                     />
                   </div>
@@ -108,8 +113,7 @@ export default function Team({
             >
               <p className="text-sm font-semibold">{slot}</p>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                Reserve this block for additional launch credibility assets when
-                you have the final image or copy.
+                {launchSlotDescription}
               </p>
             </div>
           ))}

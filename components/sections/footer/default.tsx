@@ -2,7 +2,8 @@ import { ReactNode } from "react"
 
 import { cn } from "@/lib/utils"
 
-import TokenResearch from "../../logos/tokenresearch"
+import BrandLogo from "../../brand-logo"
+import { LanguageToggle } from "../../ui/language-toggle"
 import {
   Footer,
   FooterBottom,
@@ -18,22 +19,25 @@ interface FooterLink {
 
 interface FooterColumnProps {
   title: string
-  links: FooterLink[]
+  links: readonly FooterLink[]
 }
 
 interface FooterProps {
   logo?: ReactNode
   name?: string
-  columns?: FooterColumnProps[]
+  description?: string
+  columns?: readonly FooterColumnProps[]
   copyright?: string
-  policies?: FooterLink[]
+  policies?: readonly FooterLink[]
   showModeToggle?: boolean
+  showLanguageToggle?: boolean
   className?: string
 }
 
 export default function FooterSection({
-  logo = <TokenResearch className="size-7 text-brand" />,
   name = "TokenResearch",
+  logo = <BrandLogo name={name} logoAlt={`${name} logo`} size={30} />,
+  description = "AI-native research workspace for deeper reading, sharper experiments, and better scientific handoffs.",
   columns = [
     {
       title: "Narrative",
@@ -66,6 +70,7 @@ export default function FooterSection({
     { text: "LinkedIn placeholder", href: "#footer" },
   ],
   showModeToggle = true,
+  showLanguageToggle = true,
   className,
 }: FooterProps) {
   return (
@@ -77,10 +82,8 @@ export default function FooterSection({
               <div className="flex items-center gap-3">
                 {logo}
                 <div>
-                  <h3 className="text-xl font-bold">{name}</h3>
                   <p className="mt-2 max-w-[240px] text-sm leading-7 text-muted-foreground">
-                    AI-native research workspace for deeper reading, sharper
-                    experiments, and better scientific handoffs.
+                    {description}
                   </p>
                 </div>
               </div>
@@ -108,6 +111,7 @@ export default function FooterSection({
                   {policy.text}
                 </a>
               ))}
+              {showLanguageToggle && <LanguageToggle />}
               {showModeToggle && <ModeToggle />}
             </div>
           </FooterBottom>
