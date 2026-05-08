@@ -1,4 +1,5 @@
 import { type Language } from "@/components/language-provider"
+import { navLinks, pageCopy } from "@/lib/site-pages"
 
 export type SiteCopy = typeof siteCopy.en
 
@@ -10,13 +11,8 @@ export const siteCopy = {
       logoAlt: "TokenResearch logo",
     },
     navbar: {
-      links: [
-        { text: "Mission", href: "#mission" },
-        { text: "Perspectives", href: "#capabilities" },
-        { text: "Publications", href: "#skills" },
-        { text: "Skills", href: "#skills" },
-      ],
-      dashboard: "Dashboard",
+      links: navLinks.en,
+      dashboard: "Gateway",
       menuLabel: "Toggle navigation menu",
     },
     hero: {
@@ -41,8 +37,8 @@ export const siteCopy = {
         "An AI-Native Vibe Research platform - you stay in control of the science while agents handle the heavy lifting.",
       imageAlt: "TokenResearch workspace interface",
       buttons: [
-        { href: "#product-ui", text: "Get Started", variant: "default" },
-        { href: "#mission", text: "Our Mission", variant: "outline" },
+        { href: "/gateway", text: "Open Gateway", variant: "default" },
+        { href: "/mission", text: "Our Mission", variant: "outline" },
       ],
       highlights: [
         "Search literature",
@@ -68,8 +64,7 @@ export const siteCopy = {
         },
         {
           title: "Experiment",
-          description:
-            "Run structured workflows and reusable research skills.",
+          description: "Run structured workflows and reusable research skills.",
         },
         {
           title: "Analysis",
@@ -114,15 +109,13 @@ export const siteCopy = {
         {
           title: "Taste",
           label: "Researcher quality",
-          text:
-            'Taste is holding yourself to a high standard when no one is checking your work. It is the boldness to aim for something that has never been done, and the creativity to see a path where others see a wall. It is deep domain knowledge distilled into judgment: the ability to look at a thousand possible directions and say, this one matters. Richard Hamming used to ask his colleagues at Bell Labs, "What are the important problems in your field? And why aren\'t you working on them?" Most people never ask. Taste is what makes you ask, and what makes your answer worth following.',
+          text: 'Taste is holding yourself to a high standard when no one is checking your work. It is the boldness to aim for something that has never been done, and the creativity to see a path where others see a wall. It is deep domain knowledge distilled into judgment: the ability to look at a thousand possible directions and say, this one matters. Richard Hamming used to ask his colleagues at Bell Labs, "What are the important problems in your field? And why aren\'t you working on them?" Most people never ask. Taste is what makes you ask, and what makes your answer worth following.',
           highlight: "this one matters.",
         },
         {
           title: "Obsession",
           label: "Researcher quality",
-          text:
-            "Obsession is what keeps you pulling the thread after the first ten attempts fail. It is curiosity that refuses to be satisfied with a surface answer. It is the passion that makes you queue another experiment at midnight, not because anyone is watching, but because you need to know. It is the resilience to hear \"that won't work\" and treat it as data rather than a verdict.",
+          text: 'Obsession is what keeps you pulling the thread after the first ten attempts fail. It is curiosity that refuses to be satisfied with a surface answer. It is the passion that makes you queue another experiment at midnight, not because anyone is watching, but because you need to know. It is the resilience to hear "that won\'t work" and treat it as data rather than a verdict.',
           highlight: "need to know.",
         },
       ],
@@ -171,6 +164,37 @@ export const siteCopy = {
           title: "Research handoffs",
           description:
             "Keep decisions, evidence, and procedural knowledge traceable across teammates and future runs.",
+        },
+      ],
+    },
+    researchSignal: {
+      badge: "Live market signal",
+      title: "Token economics now shape serious agent workflows",
+      description:
+        "Official API docs now treat prompt caching, cached inputs, and context reuse as practical controls. TokenResearch turns those operational details into research-planning signals.",
+      sourceLabel: "Read source",
+      cards: [
+        {
+          provider: "OpenAI",
+          signal: "Cached inputs are visible in pricing",
+          description:
+            "Repeated prompt prefixes can be cheaper to reuse, so literature packs and shared method context become part of the research system design.",
+          sourceHref: "https://platform.openai.com/docs/guides/prompt-caching",
+        },
+        {
+          provider: "Anthropic",
+          signal: "Cacheable context changes prompt design",
+          description:
+            "Stable background material is worth separating from per-run questions when agents carry references across long investigation loops.",
+          sourceHref:
+            "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+        },
+        {
+          provider: "Gemini",
+          signal: "Context caching supports long runs",
+          description:
+            "Reusable large prompts and corpora matter for experiments that return to the same evidence while testing different hypotheses.",
+          sourceHref: "https://ai.google.dev/gemini-api/docs/caching",
         },
       ],
     },
@@ -379,7 +403,8 @@ export const siteCopy = {
           ],
         },
         {
-          question: "Can more sections be added later without another redesign?",
+          question:
+            "Can more sections be added later without another redesign?",
           answer: [
             "Yes. The current page is organized around reusable sections, so you can add publications, testimonials, advisors, partner logos, or product videos as separate blocks without disturbing the existing hierarchy.",
           ],
@@ -387,50 +412,19 @@ export const siteCopy = {
       ],
     },
     cta: {
-      title:
-        "Ready to move from curiosity to evidence at thought speed?",
+      title: "Ready to move from curiosity to evidence at thought speed?",
       description:
         "TokenResearch is designed for researchers who want to ask sharper questions, release agents on the execution layer, and keep the final judgment in human hands.",
       buttons: [
-        { href: "#product-ui", text: "Start researching", variant: "default" },
-        { href: "#mission", text: "Read the mission", variant: "outline" },
+        { href: "/gateway", text: "Open gateway", variant: "default" },
+        { href: "/mission", text: "Read the mission", variant: "outline" },
       ],
     },
     footer: {
-      description:
-        "AI-native research workspace for deeper reading, sharper experiments, and better scientific handoffs.",
-      columns: [
-        {
-          title: "Narrative",
-          links: [
-            { text: "Mission", href: "#mission" },
-            { text: "Capabilities", href: "#capabilities" },
-            { text: "FAQ", href: "#footer" },
-          ],
-        },
-        {
-          title: "Product",
-          links: [
-            { text: "Workspace screenshot", href: "#product-ui" },
-            { text: "Academic skills", href: "#skills" },
-            { text: "Research workflow", href: "#capabilities" },
-          ],
-        },
-        {
-          title: "Placeholders",
-          links: [
-            { text: "Founder photos", href: "#team" },
-            { text: "Contact email", href: "#footer" },
-            { text: "GitHub or waitlist link", href: "#footer" },
-          ],
-        },
-      ],
-      copyright:
-        "© 2026 TokenResearch. Launch page draft prepared for content fill-in.",
-      policies: [
-        { text: "Email placeholder", href: "#footer" },
-        { text: "LinkedIn placeholder", href: "#footer" },
-      ],
+      description: pageCopy.en.common.footerDescription,
+      columns: pageCopy.en.common.footerColumns,
+      copyright: pageCopy.en.common.copyright,
+      policies: pageCopy.en.common.policies,
     },
     languageToggle: {
       switchToEnglish: "Switch language to English",
@@ -446,13 +440,8 @@ export const siteCopy = {
       logoAlt: "词元智研标志",
     },
     navbar: {
-      links: [
-        { text: "使命", href: "#mission" },
-        { text: "视角", href: "#capabilities" },
-        { text: "成果", href: "#skills" },
-        { text: "技能", href: "#skills" },
-      ],
-      dashboard: "工作台",
+      links: navLinks.zh,
+      dashboard: "中转站",
       menuLabel: "打开导航菜单",
     },
     hero: {
@@ -477,8 +466,8 @@ export const siteCopy = {
         "词元智研是一款 AI 原生的 Vibe Research 平台：科学判断始终由你掌控，繁重流程交给智能体完成。",
       imageAlt: "词元智研工作台界面",
       buttons: [
-        { href: "#product-ui", text: "开始体验", variant: "default" },
-        { href: "#mission", text: "了解使命", variant: "outline" },
+        { href: "/gateway", text: "打开中转站", variant: "default" },
+        { href: "/mission", text: "了解使命", variant: "outline" },
       ],
       highlights: [
         "检索文献",
@@ -521,8 +510,7 @@ export const siteCopy = {
       description:
         "词元智研面向一个新的研究范式：AI 正在压缩科学的执行层。我们的使命，是让研究者继续掌控问题、判断、品味与执念，把从好奇心到证据之间的高成本工作交给智能体完成。",
       operatingBeliefLabel: "目标",
-      operatingBelief:
-        "当执行变得几乎免费，研究者终于能以思维的速度前进。",
+      operatingBelief: "当执行变得几乎免费，研究者终于能以思维的速度前进。",
       operatingBeliefTags: ["低摩擦", "研究者主导", "思维速度"],
       principles: [
         {
@@ -546,15 +534,13 @@ export const siteCopy = {
         {
           title: "品味",
           label: "研究者特质",
-          text:
-            "品味，是在没有人检查你工作的时候，依然用很高的标准要求自己。它是敢于瞄准前所未有之事的胆量，也是能在别人只看见墙的地方看见路径的创造力。它是深厚领域知识沉淀成的判断力：面对上千个可能方向时，你能看着其中一个说，这个方向重要。Richard Hamming 曾经问贝尔实验室的同事：“你所在领域最重要的问题是什么？你为什么没有在做它们？”大多数人从不这样问。品味让你提出这个问题，也让你的答案值得被追随。",
+          text: "品味，是在没有人检查你工作的时候，依然用很高的标准要求自己。它是敢于瞄准前所未有之事的胆量，也是能在别人只看见墙的地方看见路径的创造力。它是深厚领域知识沉淀成的判断力：面对上千个可能方向时，你能看着其中一个说，这个方向重要。Richard Hamming 曾经问贝尔实验室的同事：“你所在领域最重要的问题是什么？你为什么没有在做它们？”大多数人从不这样问。品味让你提出这个问题，也让你的答案值得被追随。",
           highlight: "这个方向重要。",
         },
         {
           title: "执念",
           label: "研究者特质",
-          text:
-            "执念，是当前十次尝试都失败之后，仍然让你继续顺着线索追下去的东西。它是不愿满足于表面答案的好奇心。它是一种热情，让你在午夜又排上一个实验，不是因为有人在看，而是因为你必须知道。它也是一种韧性：听到“这行不通”时，把它当作数据，而不是判决。",
+          text: "执念，是当前十次尝试都失败之后，仍然让你继续顺着线索追下去的东西。它是不愿满足于表面答案的好奇心。它是一种热情，让你在午夜又排上一个实验，不是因为有人在看，而是因为你必须知道。它也是一种韧性：听到“这行不通”时，把它当作数据，而不是判决。",
           highlight: "你必须知道。",
         },
       ],
@@ -576,8 +562,7 @@ export const siteCopy = {
         },
         {
           title: "AI 搜索",
-          description:
-            "在不丢失上下文的前提下，查找相关论文、方法和数据集。",
+          description: "在不丢失上下文的前提下，查找相关论文、方法和数据集。",
         },
         {
           title: "数据抽取",
@@ -591,18 +576,47 @@ export const siteCopy = {
         },
         {
           title: "深度研究",
-          description:
-            "运行更长周期的调查，连接来源、比较证据，并保留引用。",
+          description: "运行更长周期的调查，连接来源、比较证据，并保留引用。",
         },
         {
           title: "报告生成",
-          description:
-            "把发现转化为简报、研究备忘录和接近发表质量的叙事材料。",
+          description: "把发现转化为简报、研究备忘录和接近发表质量的叙事材料。",
         },
         {
           title: "研究交接",
           description:
             "让决策、证据和流程知识在团队成员与未来运行中保持可追踪。",
+        },
+      ],
+    },
+    researchSignal: {
+      badge: "实时市场信号",
+      title: "Token 经济性正在影响严肃智能体工作流",
+      description:
+        "主流 API 官方文档已经把 prompt caching、cached inputs 和 context reuse 作为实际控制项。词元智研会把这些运行细节转化为研究规划信号。",
+      sourceLabel: "查看来源",
+      cards: [
+        {
+          provider: "OpenAI",
+          signal: "缓存输入已经进入价格结构",
+          description:
+            "重复 prompt 前缀可以被更低成本地复用，因此文献包和共享方法上下文会成为研究系统设计的一部分。",
+          sourceHref: "https://platform.openai.com/docs/guides/prompt-caching",
+        },
+        {
+          provider: "Anthropic",
+          signal: "可缓存上下文改变 prompt 设计",
+          description:
+            "当智能体在长周期调查中携带引用时，稳定背景材料应与每轮具体问题分离。",
+          sourceHref:
+            "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+        },
+        {
+          provider: "Gemini",
+          signal: "上下文缓存支撑长流程运行",
+          description:
+            "当实验反复回到同一组证据、测试不同假设时，大 prompt 和语料复用会变成实际约束。",
+          sourceHref: "https://ai.google.dev/gemini-api/docs/caching",
         },
       ],
     },
@@ -667,15 +681,13 @@ export const siteCopy = {
         },
         {
           name: "weights-and-biases",
-          description:
-            "跟踪实验、可视化训练运行，并实时保持研究运维可观测。",
+          description: "跟踪实验、可视化训练运行，并实时保持研究运维可观测。",
           tags: ["MLOps", "Weights & Biases", "WandB"],
           version: "v1.0.0",
         },
         {
           name: "academic-plotting",
-          description:
-            "从 notebook、日志和结果表中生成论文级图表与插图。",
+          description: "从 notebook、日志和结果表中生成论文级图表与插图。",
           tags: ["学术写作", "可视化", "Matplotlib"],
           version: "v1.0.0",
         },
@@ -688,15 +700,13 @@ export const siteCopy = {
         },
         {
           name: "grpo-rl-training",
-          description:
-            "面向推理密集任务的 GRPO 与强化学习微调工作流专家指南。",
+          description: "面向推理密集任务的 GRPO 与强化学习微调工作流专家指南。",
           tags: ["后训练", "强化学习", "GRPO"],
           version: "v1.0.0",
         },
         {
           name: "creative-thinking-for-research",
-          description:
-            "把认知科学框架用于类比推理和研究构想生成。",
+          description: "把认知科学框架用于类比推理和研究构想生成。",
           tags: ["创造性思维", "研究构想", "类比推理"],
           version: "v1.0.0",
         },
@@ -709,22 +719,19 @@ export const siteCopy = {
         },
         {
           name: "langchain",
-          description:
-            "使用工具、链和检索增强流水线构建智能体式研究工作流。",
+          description: "使用工具、链和检索增强流水线构建智能体式研究工作流。",
           tags: ["智能体", "LangChain", "RAG"],
           version: "v1.0.0",
         },
         {
           name: "transformer-lens-interpretability",
-          description:
-            "支持机制可解释性流程，包括激活 patching 和表征分析。",
+          description: "支持机制可解释性流程，包括激活 patching 和表征分析。",
           tags: ["机制可解释性", "TransformerLens", "激活 Patching"],
           version: "v1.0.0",
         },
         {
           name: "peft-fine-tuning",
-          description:
-            "面向 LoRA、QLoRA 及相关适配方法的参数高效微调手册。",
+          description: "面向 LoRA、QLoRA 及相关适配方法的参数高效微调手册。",
           tags: ["微调", "PEFT", "LoRA"],
           version: "v1.0.0",
         },
@@ -804,44 +811,15 @@ export const siteCopy = {
       description:
         "词元智研为新的研究者而设计：你提出更锋利的问题，把执行层释放给智能体，并把最终判断留在人手里。",
       buttons: [
-        { href: "#product-ui", text: "开始研究", variant: "default" },
-        { href: "#mission", text: "阅读使命", variant: "outline" },
+        { href: "/gateway", text: "打开中转站", variant: "default" },
+        { href: "/mission", text: "阅读使命", variant: "outline" },
       ],
     },
     footer: {
-      description:
-        "AI 原生研究工作台，让阅读更深入、实验更清晰、科学交接更可靠。",
-      columns: [
-        {
-          title: "叙事",
-          links: [
-            { text: "使命", href: "#mission" },
-            { text: "能力", href: "#capabilities" },
-            { text: "常见问题", href: "#footer" },
-          ],
-        },
-        {
-          title: "产品",
-          links: [
-            { text: "工作台截图", href: "#product-ui" },
-            { text: "学术技能", href: "#skills" },
-            { text: "研究流程", href: "#capabilities" },
-          ],
-        },
-        {
-          title: "占位",
-          links: [
-            { text: "创始人照片", href: "#team" },
-            { text: "联系邮箱", href: "#footer" },
-            { text: "GitHub 或候补名单链接", href: "#footer" },
-          ],
-        },
-      ],
-      copyright: "© 2026 词元智研。发布页草稿，待补充正式内容。",
-      policies: [
-        { text: "邮箱占位", href: "#footer" },
-        { text: "LinkedIn 占位", href: "#footer" },
-      ],
+      description: pageCopy.zh.common.footerDescription,
+      columns: pageCopy.zh.common.footerColumns,
+      copyright: pageCopy.zh.common.copyright,
+      policies: pageCopy.zh.common.policies,
     },
     languageToggle: {
       switchToEnglish: "切换到英文",

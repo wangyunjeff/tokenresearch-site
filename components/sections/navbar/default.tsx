@@ -13,7 +13,7 @@ import {
   NavbarLeft,
   NavbarRight,
 } from "../../ui/navbar"
-import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../../ui/sheet"
 
 interface NavbarLink {
   text: string
@@ -26,6 +26,7 @@ interface NavbarProps {
   homeUrl?: string
   links?: readonly NavbarLink[]
   dashboardLabel?: string
+  dashboardHref?: string
   menuLabel?: string
   className?: string
 }
@@ -35,20 +36,26 @@ export default function Navbar({
   logo = <BrandLogo name={name} logoAlt={`${name} logo`} size={30} priority />,
   homeUrl = "#top",
   links = [
-    { text: "Mission", href: "#mission" },
-    { text: "Perspectives", href: "#capabilities" },
-    { text: "Publications", href: "#skills" },
-    { text: "Skills", href: "#skills" },
+    { text: "Mission", href: "/mission" },
+    { text: "Gateway", href: "/gateway" },
+    { text: "Skills", href: "/skills" },
+    { text: "Perspectives", href: "/perspectives" },
+    { text: "AI Signals", href: "/signals" },
   ],
   dashboardLabel = "Dashboard",
+  dashboardHref = "/gateway",
   menuLabel = "Toggle navigation menu",
   className,
 }: NavbarProps) {
   return (
-    <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
-      <div className="absolute left-0 h-24 w-full bg-background/55 fade-bottom backdrop-blur-xl" />
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b border-border/60 bg-background/82 px-4 backdrop-blur-xl",
+        className
+      )}
+    >
       <div className="relative mx-auto max-w-container">
-        <NavbarComponent className="rounded-full border border-white/10 bg-background/55 px-5 shadow-xl shadow-black/10 backdrop-blur-xl">
+        <NavbarComponent className="min-h-18">
           <NavbarLeft className="gap-3">
             <a
               href={homeUrl}
@@ -58,12 +65,12 @@ export default function Navbar({
             </a>
           </NavbarLeft>
 
-          <NavbarCenter className="hidden gap-6 lg:flex">
+          <NavbarCenter className="hidden gap-8 lg:flex">
             {links.map((link) => (
               <a
                 key={link.text}
                 href={link.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.text}
               </a>
@@ -76,7 +83,7 @@ export default function Navbar({
               <ModeToggle />
             </div>
             <Button size="sm" asChild className="hidden lg:inline-flex">
-              <a href="#product-ui">
+              <a href={dashboardHref}>
                 {dashboardLabel}
                 <ArrowRight className="size-4" />
               </a>
@@ -94,6 +101,7 @@ export default function Navbar({
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetTitle className="sr-only">{menuLabel}</SheetTitle>
                 <div className="grid gap-8 pt-6">
                   <a
                     href={homeUrl}
@@ -118,7 +126,7 @@ export default function Navbar({
                       <ModeToggle />
                     </div>
                     <Button asChild>
-                      <a href="#product-ui">
+                      <a href={dashboardHref}>
                         {dashboardLabel}
                         <ArrowRight className="size-4" />
                       </a>

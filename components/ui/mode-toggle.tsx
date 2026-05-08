@@ -21,16 +21,10 @@ const themeOptions = [
 ] as const
 
 export function ModeToggle() {
-  const { resolvedTheme, setTheme, theme } = useTheme()
+  const { setTheme, theme } = useTheme()
   const { language } = useLanguage()
 
   const currentTheme = theme ?? "system"
-  const CurrentIcon =
-    resolvedTheme === "dark"
-      ? MoonIcon
-      : resolvedTheme === "light"
-        ? SunIcon
-        : MonitorIcon
 
   return (
     <DropdownMenu>
@@ -41,7 +35,7 @@ export function ModeToggle() {
           className="size-8"
           aria-label={language === "zh" ? "切换主题" : "Change theme"}
         >
-          <CurrentIcon className="size-4" aria-hidden="true" />
+          <MonitorIcon className="size-4" aria-hidden="true" />
           <span className="sr-only">
             {language === "zh" ? "切换主题" : "Change theme"}
           </span>

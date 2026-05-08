@@ -22,6 +22,7 @@ import Items from "@/components/sections/items/default"
 import Logos from "@/components/sections/logos/default"
 import Mission from "@/components/sections/mission/default"
 import Navbar from "@/components/sections/navbar/default"
+import ResearchSignal from "@/components/sections/research-signal/default"
 import Skills from "@/components/sections/skills/default"
 import Stats from "@/components/sections/stats/default"
 import Team from "@/components/sections/team/default"
@@ -47,6 +48,12 @@ const capabilityIcons = [
   <ScrollText key="handoffs" className="stroke-1.5 size-5" />,
 ]
 
+const researchSignalIcons = [
+  <Search key="pricing-signal" className="stroke-1.5 size-5" />,
+  <Layers3 key="cache-signal" className="stroke-1.5 size-5" />,
+  <Bot key="agent-loop-signal" className="stroke-1.5 size-5" />,
+]
+
 export default function HomePage() {
   const { language } = useLanguage()
   const copy = getSiteCopy(language)
@@ -55,8 +62,10 @@ export default function HomePage() {
     <main className="min-h-screen w-full bg-background text-foreground">
       <Navbar
         name={copy.brand.localizedName}
+        homeUrl="/"
         links={copy.navbar.links}
         dashboardLabel={copy.navbar.dashboard}
+        dashboardHref="/gateway"
         menuLabel={copy.navbar.menuLabel}
       />
       <Hero
@@ -101,6 +110,16 @@ export default function HomePage() {
         items={copy.capabilities.items.map((item, index) => ({
           ...item,
           icon: capabilityIcons[index],
+        }))}
+      />
+      <ResearchSignal
+        badgeLabel={copy.researchSignal.badge}
+        title={copy.researchSignal.title}
+        description={copy.researchSignal.description}
+        sourceLabel={copy.researchSignal.sourceLabel}
+        cards={copy.researchSignal.cards.map((card, index) => ({
+          ...card,
+          icon: researchSignalIcons[index],
         }))}
       />
       <Stats items={copy.stats.items} />
