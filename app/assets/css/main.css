@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --container-8xl: 90rem;
+  --font-sans: 'Public Sans', sans-serif;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+
+:root {
+  --ui-container: var(--container-8xl);
+}
+
+h1,
+h2,
+h3,
+[data-slot="title"] {
+  letter-spacing: 0 !important;
+}
+
+.landing-hero {
+  min-height: auto !important;
+}
+
+.landing-hero [data-slot="container"] {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem !important;
+  padding-bottom: 4rem !important;
+  gap: 4rem !important;
+}
+
+@media (max-width: 639px) {
+  .landing-hero,
+  .landing-hero [data-slot="container"] {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .landing-hero [data-slot="container"] {
+    gap: 2rem !important;
+  }
+}
