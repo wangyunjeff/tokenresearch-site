@@ -12,10 +12,10 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'TokenResearch Docs'
+    siteName: '词元智研'
   },
   header: {
-    title: 'TokenResearch Docs',
+    title: '词元智研',
     to: '/',
     logo: {
       alt: '',
@@ -25,12 +25,12 @@ export default defineAppConfig({
     search: true,
     colorMode: true,
     links: [{
-      label: '模型评测',
-      icon: 'i-lucide-chart-no-axes-combined',
-      to: '/models',
+      label: '模型广场',
+      icon: 'i-lucide-store',
+      to: '/models/market',
       class: 'hidden md:inline-flex'
     }, {
-      label: '场景路线',
+      label: '科研流程',
       icon: 'i-lucide-map',
       to: '/workflows',
       class: 'hidden md:inline-flex'
@@ -40,23 +40,23 @@ export default defineAppConfig({
       to: '/gallery',
       class: 'hidden md:inline-flex'
     }, {
-      label: 'Skills/MCP',
-      icon: 'i-lucide-plug',
-      to: '/skills-mcp',
+      label: 'Codex 文档',
+      icon: 'i-lucide-terminal',
+      to: '/codex/model',
       class: 'hidden md:inline-flex'
     }]
   },
   footer: {
-    credits: `TokenResearch Docs • Built with Nuxt UI • © ${new Date().getFullYear()}`,
+    credits: `词元智研 • TokenResearch • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-lucide-book-open',
       'to': '/tutorials',
       'aria-label': '基础教程'
     }, {
-      'icon': 'i-lucide-chart-no-axes-combined',
-      'to': '/models',
-      'aria-label': '模型评测'
+      'icon': 'i-lucide-store',
+      'to': '/models/market',
+      'aria-label': '模型广场'
     }, {
       'icon': 'i-lucide-map',
       'to': '/workflows',
@@ -81,16 +81,16 @@ export default defineAppConfig({
       title: '继续阅读',
       edit: '',
       links: [{
+        icon: 'i-lucide-store',
+        label: '模型广场',
+        to: '/models/market'
+      }, {
         icon: 'i-lucide-star',
         label: 'Skill Gallery',
         to: '/gallery'
       }, {
-        icon: 'i-lucide-chart-no-axes-combined',
-        label: '模型评测',
-        to: '/models'
-      }, {
         icon: 'i-lucide-map',
-        label: '场景路线',
+        label: '科研流程',
         to: '/workflows'
       }]
     }

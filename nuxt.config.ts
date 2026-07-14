@@ -54,12 +54,12 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: process.env.NUXT_SITE_URL || 'https://tokenresearch.com.cn',
-    title: 'TokenResearch Docs',
-    description: 'AI coding tutorials, model evaluations, Skill Gallery, and MCP configuration notes.',
+    domain: process.env.NUXT_SITE_URL || 'https://www.tokenresearch.com.cn',
+    title: '词元智研',
+    description: 'AI 原生科研平台，连接模型网关、科研智能体、Skill Gallery 和 Codex 工作流。',
     full: {
-      title: 'TokenResearch Docs - Full Documentation',
-      description: 'Full documentation for tutorials, Codex configuration, model evaluations, Skill gallery, and AI coding assistant workflows.'
+      title: '词元智研 - Full Documentation',
+      description: 'Full documentation for TokenResearch model marketplace, Codex configuration, model evaluations, Skill Gallery, and AI-native research workflows.'
     },
     sections: [
       {
@@ -84,7 +84,7 @@ export default defineNuxtConfig({
         ]
       },
       {
-        title: '模型评测',
+        title: '模型与价格',
         contentCollection: 'docs',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/models%' }
@@ -136,7 +136,7 @@ export default defineNuxtConfig({
   },
 
   mcp: {
-    name: 'TokenResearch Docs'
+    name: '词元智研'
   },
 
   ogImage: {

@@ -62,9 +62,9 @@ const defaults: RelatedLink[] = [
     to: '/tutorials'
   },
   {
-    label: '模型评测总览',
-    description: '按任务选择模型、推理等级和上下文策略。',
-    icon: 'i-lucide-chart-no-axes-combined',
+    label: '模型中心',
+    description: '查看模型广场、价格和路由评测。',
+    icon: 'i-lucide-store',
     to: '/models'
   },
   {

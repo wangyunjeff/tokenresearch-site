@@ -15,7 +15,7 @@
       checked: true,
       type: 'checkbox'
     }, {
-      label: '模型评测',
+      label: '模型中心',
       to: '/models'
     }, {
       label: '场景路线',

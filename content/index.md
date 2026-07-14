@@ -1,7 +1,7 @@
 ---
 seo:
-  title: TokenResearch Docs
-  description: AI coding tutorials, model evaluations, Skill gallery, and MCP configuration notes.
+  title: 词元智研 | TokenResearch
+  description: AI 原生科研平台，从想法、文献、实验到论文发表。
 ---
 
 ::u-page-hero{class="landing-hero relative overflow-hidden !min-h-0 !py-12 bg-neutral-50 dark:bg-neutral-950 sm:!py-16 lg:!py-24"}
@@ -9,155 +9,37 @@ seo:
 :hero-background
 
 #title
-AI 编程工具[知识库]{.text-primary.whitespace-nowrap}
+词元智研
 
 #description
-从基础教程到模型评测，再到 Skill Gallery 展览区。这里保留 Nuxt UI Docs 的文档体验，同时把每个 Skill 能做什么、适合什么场景、会产出什么结果讲清楚。
+面向科学的 AI，从想法到发表。词元智研是一款 AI 原生的 Vibe Research 平台：科学判断始终由你掌控，繁重流程交给智能体完成。
 
 #links
   :::u-button
   ---
-  to: /tutorials
+  to: https://tokenresearch.com.cn/login
+  target: _blank
   size: xl
-  trailing-icon: i-lucide-arrow-right
+  icon: i-lucide-log-in
   ---
-  从基础教程开始
+  进入工作台
   :::
 
   :::u-button
   ---
-  icon: i-lucide-gallery-horizontal-end
+  icon: i-lucide-store
   color: neutral
   variant: outline
   size: xl
-  to: /gallery
+  to: /models/market
   ---
-  打开 Skill Gallery
+  模型广场
   :::
 ::
 
 ::u-page-section{class="bg-white dark:bg-neutral-950"}
 #title
-三层内容结构
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  to: /codex/model
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  查看已复刻页面
-  :::
-
-:site-map-preview
-
-#features
-  :::u-page-feature
-  ---
-  icon: i-lucide-route
-  ---
-  #title
-  基础教程
-
-  #description
-  从环境准备、配置文件、Agent 规则到视觉验收，按真实使用顺序组织。
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-chart-no-axes-combined
-  ---
-  #title
-  模型评测
-
-  #description
-  把模型、推理等级、上下文、压缩策略和路由建议拆成可复用的评测页。
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-gallery-horizontal-end
-  ---
-  #title
-  Skill Gallery
-
-  #description
-  像示例展览区一样展示每个 Skill：输入、场景、产出、适用边界。
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-text
-  ---
-  #title
-  原始教程页
-
-  #description
-  `/codex/model` 的复刻保留在 `content/3.codex/5.model.md`，后续可直接改。
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-search
-  ---
-  #title
-  搜索与目录
-
-  #description
-  全站继续使用 Nuxt Content 的自动侧边栏、右侧 TOC、搜索和 Markdown 原文。
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-wrench
-  ---
-  #title
-  可持续扩展
-
-  #description
-  新教程、新评测、新 Skill 展示都只需要新增编号 Markdown 文件。
-  :::
-::
-
-::u-page-section{class="bg-neutral-50 dark:bg-neutral-900"}
-#title
-模型评测入口
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  to: /models
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  开始模型评测
-  :::
-
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  to: /models/eval-template
-  icon: i-lucide-clipboard-list
-  variant: outline
-  ---
-  复制评测模板
-  :::
-
-#description
-先建立评测方法，再给出模型选择、推理等级、上下文和压缩策略。这里的评测内容用于指导日常任务路由，而不是追求单一排行榜。
-
-:model-eval-preview
-::
-
-::u-page-section{class="bg-white dark:bg-neutral-950"}
-#title
-场景路线
+使命：让研究以思维的速度前进
 
 #links
   :::u-button
@@ -168,18 +50,148 @@ AI 编程工具[知识库]{.text-primary.whitespace-nowrap}
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  查看全部路线
+  查看研究流程
   :::
 
 #description
-教程解决入门，评测解决模型选择，Gallery 展示能力边界；场景路线把这些页面串成实际工作流。
+AI 正在压缩科学的执行层。我们的使命，是让研究者继续掌控问题、判断、品味与执念，把从好奇心到证据之间的高成本工作交给智能体完成。
 
-:workflow-playbook-preview
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-gauge
+  ---
+  #title
+  压缩执行摩擦
+
+  #description
+  文献、实验、分析与写作都应变得足够便宜，让研究者不再因为流程成本而放弃更大的问题。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-brain
+  ---
+  #title
+  把瓶颈交还给判断
+
+  #description
+  当智能体承担更多执行，人的价值转向提出正确问题、读懂证据，并判断什么方向真正值得追。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-sparkles
+  ---
+  #title
+  放大品味与执念
+
+  #description
+  未来的研究者不会被自动化替代，而会成为定义质量、追踪线索并持续推进的人。
+  :::
+::
+
+::u-page-section{class="bg-neutral-50 dark:bg-neutral-900"}
+#title
+模型广场
+
+#links
+  :::u-button
+  ---
+  color: neutral
+  size: lg
+  to: /models/market
+  trailingIcon: i-lucide-arrow-right
+  variant: subtle
+  ---
+  查看完整价格
+  :::
+
+#description
+统一模型入口覆盖 DeepSeek、OpenAI、Anthropic 等分组。价格按人民币每 1M tokens 展示，缓存命中、输入和输出分开计算。
+
+:model-marketplace
 ::
 
 ::u-page-section{class="bg-white dark:bg-neutral-950"}
 #title
-Skill Gallery 展览区
+一条连续的研究闭环
+
+#links
+  :::u-button
+  ---
+  color: neutral
+  size: lg
+  to: /workflows
+  trailingIcon: i-lucide-arrow-right
+  variant: subtle
+  ---
+  查看流程文档
+  :::
+
+#description
+从问题发现到论文产出，平台把研究动作组织成连续流程；模型、GPU、Token、数据和写作都服务于这一条闭环。
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-book-open-check
+  ---
+  #title
+  文献
+
+  #description
+  更快梳理前人工作，找回真正相关的论文。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-lightbulb
+  ---
+  #title
+  构想
+
+  #description
+  把问题转化为假设、计划和候选研究方向。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-flask-conical
+  ---
+  #title
+  实验
+
+  #description
+  运行结构化流程，并复用沉淀好的研究技能。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-chart-spline
+  ---
+  #title
+  分析
+
+  #description
+  抽取证据、比较结果，并保留推理链路。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-pen-line
+  ---
+  #title
+  写作
+
+  #description
+  生成报告、论文段落和可复现的研究交接材料。
+  :::
+::
+
+::u-page-section{class="bg-white dark:bg-neutral-950"}
+#title
+核心能力
 
 #links
   :::u-button
@@ -190,73 +202,142 @@ Skill Gallery 展览区
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  查看全部 Skill
+  查看 Skill Gallery
   :::
 
 #description
-每张卡片代表一个可复用能力：它解决什么任务、输入是什么、产出长什么样、什么时候值得调用。
+Token 和模型调用只是底座。真正的目标，是让研究者在一个工作台里完成严肃科研流程。
 
-:skill-gallery-preview
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-library
+  ---
+  #title
+  文献综述
 
-::note
-首页只放 Gallery 的代表卡片；完整分组和全部 Skill 示例在 [Skill Gallery](/gallery)。
-::
+  #description
+  综合已有工作，绘制相关论文地图，并让阅读始终围绕当前问题展开。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-orbit
+  ---
+  #title
+  研究智能体
+
+  #description
+  把宽泛研究目标拆解为结构化计划、子问题和有证据支撑的下一步。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-search
+  ---
+  #title
+  AI 搜索
+
+  #description
+  在不丢失上下文的前提下，查找相关论文、方法和数据集。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-table-properties
+  ---
+  #title
+  数据抽取
+
+  #description
+  将论文、笔记或实验轨迹中的混乱信息转成可比较、可复用的结构化事实。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-list-checks
+  ---
+  #title
+  SOP 技能
+
+  #description
+  把重复出现的研究流程封装为命名技能，让最佳流程更容易复用。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-file-text
+  ---
+  #title
+  报告生成
+
+  #description
+  把发现转化为简报、研究备忘录和接近发表质量的叙事材料。
+  :::
 ::
 
 ::u-page-section{class="bg-neutral-50 dark:bg-neutral-900"}
 #title
-支持与配置
+基础设施层
 
 #links
   :::u-button
   ---
   color: neutral
   size: lg
-  to: /skills-mcp
+  to: /codex/model
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  Skills 与 MCP
+  Codex 接入文档
   :::
 
 #description
-遇到模型、代理、工作目录或浏览器检查问题时，从 FAQ 和 Skills/MCP 页面继续定位；稳定流程再沉淀成 Skill 和 Gallery 示例。
+统一 API 中转、账号池、计费和任务运行能力仍然保留，但它们服务的是科研智能体的稳定执行。
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-circle-help
-  to: /faq
+  icon: i-lucide-waypoints
   ---
   #title
-  FAQ
+  统一模型网关
 
   #description
-  常见安装、模型、代理、工作目录和视觉检查问题集中在这里。
+  用同一个入口接入 Claude、GPT、Gemini 等模型，并保持调用方式一致。
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-plug
-  to: /skills-mcp
+  icon: i-lucide-coins
   ---
   #title
-  Skills 与 MCP
+  Token 与上下文成本
 
   #description
-  判断什么时候写 Skill、什么时候接 MCP、什么时候只需要教程页。
+  把 prompt、缓存、长上下文和用量成本变成可观察、可规划的研究变量。
   :::
 
   :::u-page-feature
   ---
-  icon: i-simple-icons-googlechrome
-  to: /skills-mcp/chrome-devtools-mcp
+  icon: i-lucide-key-round
   ---
   #title
-  浏览器检查
+  团队计费与权限
 
   #description
-  前端复刻和视觉验收需要真实浏览器、截图和必要的 DOM 检查。
+  按成员、项目和工作流设置密钥、额度和访问范围，避免成本失控。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-server
+  ---
+  #title
+  GPU 任务运行
+
+  #description
+  把实验、训练和批处理任务纳入研究闭环，而不是散落在不同工具里。
   :::
 ::
 
@@ -264,15 +345,16 @@ Skill Gallery 展览区
   :::u-page-c-t-a
   ---
   links:
-    - label: 阅读教程路线图
-      to: '/tutorials'
+    - label: 进入工作台
+      to: 'https://tokenresearch.com.cn/login'
+      target: '_blank'
       trailingIcon: i-lucide-arrow-right
-    - label: 浏览模型评测
-      to: '/models'
+    - label: 浏览模型广场
+      to: '/models/market'
       variant: subtle
-      icon: i-lucide-chart-no-axes-combined
-  title: 后续修改从 Markdown 开始
-  description: 教程、评测和 Gallery 都已经落到 content/ 目录。页面结构、搜索、TOC、深色模式和 Markdown 原文路由都可以继续在本地扩展。
+      icon: i-lucide-store
+  title: 把执行层交给智能体，把判断力留给研究者。
+  description: 登录后即可进入工作台，管理基础设施能力，并把文献、实验、分析和写作串成一个连续的研究系统。
   class: bg-white dark:bg-neutral-950
   ---
 
