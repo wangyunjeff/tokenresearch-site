@@ -1,0 +1,19 @@
+# 词元智研 · Codex 基础配置
+# 配套使用 auth.json；填入你自己的 API Key。
+# 服务地址与模型沿用提供的配置包，实际可用性以控制台为准。
+
+model = "gpt-6-astra"
+model_provider = "me"
+model_reasoning_effort = "xhigh"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+cli_auth_credentials_store = "file"
+
+[model_providers.me]
+name = "me"
+base_url = "https://tokenresearch.com.cn"
+wire_api = "responses"
+requires_openai_auth = true
+
+[windows]
+sandbox = "elevated"

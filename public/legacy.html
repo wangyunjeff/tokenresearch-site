@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<script>if (/^#\/(models|docs|gallery|skills|admin)(\/|$)/.test(location.hash)) location.replace("/" + location.hash);</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101727"><meta name="description" content="词元智研连接模型、Skills 与研究工具。探索科研工作流与 Gallery，把时间留给值得追问的问题。">
+<title>词元智研 · 把时间留给好问题</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="tutorial.css?v=3"><link rel="stylesheet" href="style.css?v=6">
+<script type="module" src="app.js?v=9"></script>
+<link rel="stylesheet" href="pricing.css?v=2"><link rel="stylesheet" href="research.css?v=2">
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到内容</a>
+<header class="site-header"><div class="header-inner">
+<a class="site-brand" href="/" aria-label="词元智研首页"><svg class="brand-symbol" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 9h30v5H22v21h-6V14H5zm20 11h10v5h-5l5 10h-6l-5-10z" fill="currentColor"/></svg><span>词元智研<small>TOKEN RESEARCH</small></span></a>
+<nav class="primary-nav" id="site-navigation" aria-label="主导航"><a href="#/workflow" data-main-nav="workflow">工作流</a><a href="#/skills" data-main-nav="skills">Skills</a><a href="#/gallery" data-main-nav="gallery">Gallery</a><a href="#/models" data-main-nav="models">模型广场</a><a href="#/docs" data-main-nav="docs">文档</a><a href="#/teams" data-main-nav="teams" class="mobile-team-link">团队接入</a></nav>
+<button id="site-menu-toggle" aria-label="展开网站导航" aria-controls="site-navigation" aria-expanded="false"><span></span><span></span></button>
+<a class="console-link" href="https://tokenresearch.com.cn" target="_blank" rel="noopener noreferrer"><span class="console-label"><span class="console-long">进入</span>控制台</span><span aria-hidden="true">↗</span></a>
+</div></header>
+<main id="main-content" tabindex="-1"></main>
+<footer class="research-footer"><div class="r-container"><div class="footer-top"><div><a class="footer-brand" href="/">词元智研<span>TOKEN RESEARCH</span></a><p>让思考，有更长的连续时间。</p></div><div><h3>开始研究</h3><a href="#/workflow">科研工作流</a><a href="#/skills">Skills</a><a href="#/gallery">Gallery</a></div><div><h3>工具与资源</h3><a href="#/models">模型广场</a><a href="#/docs">文档中心</a><a href="https://tokenresearch.com.cn" target="_blank" rel="noopener noreferrer">控制台 ↗</a></div><div><h3>词元智研</h3><a href="#/perspective">我们的想法</a><a href="#/teams">团队接入</a><a href="#/admin">模型管理</a></div></div><div class="footer-bottom"><span>© 2026 TOKEN RESEARCH</span><span>RESEARCH, WITH INTENTION.</span><button data-scroll="main-content">回到顶部 ↑</button></div><div class="footer-large" aria-hidden="true">TOKEN RESEARCH<span>↗</span></div></div></footer>
+<dialog id="model-dialog" class="model-dialog" aria-labelledby="dialog-title"><div id="dialog-body"></div></dialog>
+<div id="global-toast" role="status" aria-live="polite"></div>
+<template id="tutorial-template">
+<div class="tutorial-widget">
+<div class="tutorial-toolbar"><div class="os-picker"><span id="os-label">选择你的系统</span><div class="os-buttons" role="group" aria-labelledby="os-label"><button id="os-windows" data-os="windows" aria-pressed="true"><span data-icon="windows"></span>Windows</button><button id="os-mac" data-os="mac" aria-pressed="false"><span data-icon="apple"></span>Mac</button></div></div><div class="tutorial-progress"><div class="progress-copy"><span>已完成</span><b id="progress-count">0 / 6</b></div><div id="progress" class="progress" role="progressbar" aria-label="教程完成进度" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progress-fill"></span></div></div></div>
+<nav id="step-nav" aria-label="安装步骤"></nav>
+<div class="guide-topline"><div><span class="status-line"></span><span id="guide-position">步骤 01 / 06</span></div><span id="os-hint">Windows 桌面版</span></div>
+<article id="guide" class="guide-card" tabindex="-1" aria-labelledby="step-title"></article>
+<div class="step-actions"><button class="previous" id="previous"><span aria-hidden="true">←</span> 上一步</button><span id="action-hint">完成当前操作后，继续下一步</span><button class="next" id="next">已完成，下一步 →</button></div>
+<section class="help" aria-labelledby="help-title"><div class="help-heading"><h2 id="help-title">卡在这一步？</h2><span>展开问题，看看解决方法。</span></div><div id="faq-list" class="faq-grid"></div></section>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div></template>
+<noscript><p class="noscript">请启用 JavaScript 查看模型目录和交互教程。也可以直接<a href="downloads/codex-config.zip" download>下载 Codex 配置包</a>。</p></noscript>
+</body></html>

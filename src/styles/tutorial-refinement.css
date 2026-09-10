@@ -1,0 +1,534 @@
+/* A neutral, editorial treatment for the existing interactive tutorial. */
+.portal-tutorial .tutorial-widget {
+  --ink: #ededed;
+  --muted: #929292;
+  --line: #ffffff14;
+  --lime: #e6e6e6;
+  --green: #b4b4b4;
+}
+.portal-tutorial .tutorial-widget :is(button, a, input, summary):focus-visible {
+  outline: 2px solid #d1d1d1;
+  outline-offset: 4px;
+}
+.portal-tutorial .tutorial-widget .tutorial-toolbar {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0 0 24px;
+}
+.portal-tutorial .tutorial-widget .os-picker > span {
+  color: #969696;
+  font-size: 12px;
+}
+.portal-tutorial .tutorial-widget .os-buttons {
+  background: #111111;
+  border: 1px solid #ffffff16;
+  border-radius: 30px;
+  padding: 4px;
+  gap: 4px;
+}
+.portal-tutorial .tutorial-widget .os-buttons button {
+  padding: 8px 17px;
+  border-radius: 24px;
+  color: #909090;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+}
+.portal-tutorial .tutorial-widget .os-buttons button[aria-pressed='true'] {
+  color: #f0f0f0;
+  background: #2a2a2a;
+  box-shadow:
+    inset 0 1px 0 #ffffff13,
+    0 2px 5px #0003;
+}
+.portal-tutorial .tutorial-widget .tutorial-progress {
+  width: 154px;
+}
+.portal-tutorial .tutorial-widget .progress-copy {
+  color: #8d8d8d;
+  font-size: 10px;
+  letter-spacing: 0.025em;
+}
+.portal-tutorial .tutorial-widget .progress-copy b {
+  color: #d9d9d9;
+}
+.portal-tutorial .tutorial-widget .progress {
+  height: 2px;
+  background: #272727;
+}
+.portal-tutorial .tutorial-widget .progress span {
+  background: #cacaca;
+}
+.portal-tutorial .tutorial-widget #step-nav {
+  margin: 19px 0 26px;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+}
+.portal-tutorial .tutorial-widget .nav-step {
+  position: relative;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 3px 19px;
+  gap: 11px;
+  color: #858585;
+  transition:
+    color 0.25s,
+    background 0.25s;
+}
+.portal-tutorial .tutorial-widget .nav-step:hover {
+  background: #ffffff03;
+  color: #dcdcdc;
+}
+.portal-tutorial .tutorial-widget .nav-step.active {
+  background: linear-gradient(0deg, #ffffff05, transparent);
+  color: #ececec;
+}
+.portal-tutorial .tutorial-widget .nav-step::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  bottom: -1px;
+  left: 10px;
+  right: 10px;
+  background: #d4d4d4;
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+.portal-tutorial .tutorial-widget .nav-step.active::after {
+  transform: scaleX(1);
+}
+.portal-tutorial .tutorial-widget .nav-number {
+  width: 26px;
+  height: 26px;
+  background: #111111;
+  border-color: #ffffff20;
+  color: #969696;
+  font-size: 10px;
+}
+.portal-tutorial .tutorial-widget .nav-step.done .nav-number {
+  color: #bdbdbd;
+  border-color: #bdbdbd45;
+}
+.portal-tutorial .tutorial-widget .nav-step.active .nav-number {
+  color: #181818;
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+  box-shadow: 0 0 18px #d0d0d010;
+}
+.portal-tutorial .tutorial-widget .nav-text {
+  font-size: 11px;
+  font-weight: 450;
+}
+.portal-tutorial .tutorial-widget .guide-topline {
+  margin: 0 2px 15px;
+  color: #7e7e7e;
+  font-size: 10px;
+}
+.portal-tutorial .tutorial-widget #guide-position {
+  color: #a0a0a0;
+  letter-spacing: 0.035em;
+}
+.portal-tutorial .tutorial-widget .status-line {
+  width: 4px;
+  height: 4px;
+  background: #b6b6b6;
+}
+.portal-tutorial .tutorial-widget .guide-card {
+  background: #111111;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  box-shadow:
+    0 16px 50px -24px #0008,
+    inset 0 1px 0 #ffffff04;
+  scroll-margin-top: 86px;
+}
+.portal-tutorial .tutorial-widget .step-header {
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  background: linear-gradient(100deg, #ffffff03, transparent 70%);
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget .big-number {
+  color: #686868;
+  font-size: 49px;
+  font-weight: 250;
+  letter-spacing: -0.075em;
+  min-width: 50px;
+}
+.portal-tutorial .tutorial-widget .step-header h2 {
+  color: #ededed;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin-bottom: 6px;
+}
+.portal-tutorial .tutorial-widget .step-header p {
+  color: #969696;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.portal-tutorial .tutorial-widget .step-tag {
+  align-self: flex-start;
+  color: #8c8c8c;
+  background: #ffffff02;
+  border-color: #ffffff13;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+}
+.portal-tutorial .tutorial-widget .step-body {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  min-height: 400px;
+}
+.portal-tutorial .tutorial-widget .instructions {
+  padding: 31px 30px;
+  gap: 23px;
+}
+.portal-tutorial .tutorial-widget .instruction {
+  gap: 13px;
+}
+.portal-tutorial .tutorial-widget .instruction h3 {
+  color: #dbdbdb;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.portal-tutorial .tutorial-widget .instruction p {
+  color: #979797;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.portal-tutorial .tutorial-widget .instruction strong {
+  color: #d0d0d0;
+}
+.portal-tutorial .tutorial-widget .small-number {
+  width: 21px;
+  height: 21px;
+  color: #a3a3a3;
+  background: transparent;
+  border-color: #ffffff20;
+  font-size: 9px;
+  margin-top: 2px;
+}
+.portal-tutorial .tutorial-widget .visual-area {
+  margin: 0;
+  padding: 56px 28px 28px;
+  background: radial-gradient(ellipse at 50% 30%, #ffffff04, transparent 75%), #0d0d0d;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  min-height: 400px;
+}
+.portal-tutorial .tutorial-widget .visual-label {
+  top: 23px;
+  left: 27px;
+  color: #767676;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+.portal-tutorial .tutorial-widget .demo-window {
+  border: 1px solid #ffffff20;
+  border-radius: 11px;
+  background: #151515;
+  color: #c5c5c5;
+  box-shadow:
+    0 16px 40px -15px #000a,
+    inset 0 1px 0 #ffffff05;
+}
+.portal-tutorial .tutorial-widget .window-top {
+  height: 37px;
+  background: #1d1d1d;
+  border-color: var(--line);
+  color: #969696;
+  padding: 0 14px;
+}
+.portal-tutorial .tutorial-widget .window-dot {
+  width: 5px;
+  height: 5px;
+  background: #717171;
+}
+.portal-tutorial .tutorial-widget .install-center {
+  padding: 28px 18px 26px;
+}
+.portal-tutorial .tutorial-widget .codex-symbol {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(145deg, #313131, #1a1a1a);
+  border: 1px solid #ffffff1a;
+  border-radius: 14px;
+  color: #d6d6d6;
+  box-shadow:
+    inset 0 1px 0 #ffffff08,
+    0 10px 25px #0002;
+  margin-bottom: 16px;
+}
+.portal-tutorial .tutorial-widget .install-center h3 {
+  font-weight: 450;
+  font-size: 22px;
+  color: #dfdfdf;
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.install-center p, .visual-caption, .callout-label, .visual-info) {
+  color: #8e8e8e;
+}
+.portal-tutorial .tutorial-widget .visual-caption {
+  margin-top: 20px;
+  font-size: 11px;
+}
+.portal-tutorial .tutorial-widget :is(.note, .note.neutral) {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  color: #8e8e8e;
+  padding: 17px 0 0;
+  font-size: 11px;
+}
+.portal-tutorial .tutorial-widget code {
+  background: #ffffff07;
+  color: #cacaca;
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget kbd {
+  background: #202020;
+  color: #bebebe;
+  border: 1px solid #ffffff18;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.primary-link, .install-button, .generate-button, .step-actions .next) {
+  background: #e3e3e3;
+  color: #1e1e1e;
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  font-weight: 550;
+  box-shadow:
+    0 1px 0 #fff4 inset,
+    0 4px 12px #0001;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.primary-link, .install-button, .generate-button, .step-actions .next):hover {
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+  box-shadow: 0 5px 18px #0003;
+  transform: translateY(-1px);
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.file-link, .path-copy, .mini-action, .copy-btn, .secondary-link, .step-actions .previous) {
+  background: #191919;
+  color: #bababa;
+  border-color: #ffffff1b;
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.file-link, .mini-action, .copy-btn, .secondary-link, .step-actions .previous):hover {
+  background: #252525;
+  color: #e0e0e0;
+  border-color: #ffffff2b;
+}
+.portal-tutorial .tutorial-widget .step-actions {
+  padding: 23px 0 33px;
+}
+.portal-tutorial .tutorial-widget .step-actions .next {
+  min-width: 172px;
+  min-height: 43px;
+}
+.portal-tutorial .tutorial-widget .step-actions > span {
+  color: #878787;
+}
+.portal-tutorial .tutorial-widget :is(.finder-side, .console-sidebar) {
+  background: #191919;
+  color: #898989;
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget :is(.finder-side .selected, .console-sidebar .selected) {
+  background: #ffffff0a;
+  color: #d1d1d1;
+}
+.portal-tutorial .tutorial-widget .folder-row {
+  color: #959595;
+}
+.portal-tutorial .tutorial-widget .folder-row.target {
+  background: #c1c1c111;
+  color: #d7d7d7;
+  border-color: #bdbdbd45;
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(.folder-row .icon, .folder-row.target .icon, .file-detail .icon, .file-link .icon) {
+  color: #aeaeae;
+}
+.portal-tutorial .tutorial-widget :is(.run-field, .key-entry input, .file-detail, .console-key) {
+  background: #171717;
+  border-color: var(--line);
+  color: #c1c1c1;
+}
+.portal-tutorial .tutorial-widget .run-field {
+  box-shadow: 0 0 0 2px #ffffff08;
+}
+.portal-tutorial .tutorial-widget :is(.files-visual .path-caption, .file-tag) {
+  background: #ffffff04;
+  color: #9b9b9b;
+}
+.portal-tutorial .tutorial-widget :is(.run-actions, .console-table-label, .chat-demo) {
+  border-color: var(--line);
+}
+.portal-tutorial
+  .tutorial-widget
+  :is(
+    .demo-button,
+    .demo-button.highlight,
+    .console-create,
+    .console-create.active,
+    .key-entry button
+  ) {
+  background: #242424;
+  color: #bcbcbc;
+  border-color: #ffffff1f;
+}
+.portal-tutorial .tutorial-widget .console-create:hover {
+  background: #313131;
+}
+.portal-tutorial .tutorial-widget :is(.console-key code, .console-key .key-check, .success-chip) {
+  background: #ffffff08;
+  color: #bbbbbb;
+}
+.portal-tutorial .tutorial-widget .key-entry {
+  background: #151515;
+  border-color: #ffffff1f;
+}
+.portal-tutorial .tutorial-widget .key-entry:focus-within {
+  border-color: #a8a8a84d;
+  box-shadow: 0 0 0 3px #b6b6b60d;
+}
+.portal-tutorial .tutorial-widget .key-download:disabled {
+  background: #1e1e1e;
+  color: #6e6e6e;
+  border-color: #ffffff0b;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+.portal-tutorial .tutorial-widget .code-window {
+  background: #141414;
+  border-color: #ffffff20;
+}
+.portal-tutorial .tutorial-widget .code-window .window-top {
+  background: #1e1e1e;
+  color: #9f9f9f;
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget .code-key {
+  color: #cdcdcd;
+}
+/* The instructions explicitly refer to the green region: keep this semantic cue. */
+.portal-tutorial .tutorial-widget .code-value {
+  color: #c3e6a6;
+  background: #314025;
+}
+.portal-tutorial .tutorial-widget .code-help {
+  color: #9e9e9e;
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget .success-symbol {
+  color: #c6c6c6;
+  background: #ffffff06;
+  border-color: #bbbbbb33;
+}
+.portal-tutorial .tutorial-widget .completed-banner {
+  color: #c3c3c3;
+  background: #ffffff04;
+  border-color: var(--line);
+}
+.portal-tutorial .tutorial-widget .help-heading h2 {
+  color: #c2c2c2;
+  font-weight: 500;
+}
+.portal-tutorial .tutorial-widget .faq-grid {
+  gap: 0 28px;
+}
+.portal-tutorial .tutorial-widget .faq-grid details {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: none;
+}
+.portal-tutorial .tutorial-widget .faq-grid summary {
+  color: #adadad;
+  padding: 17px 0;
+}
+.portal-tutorial .tutorial-widget .faq-grid details[open] summary {
+  border: 0;
+}
+.portal-tutorial .tutorial-widget .faq-grid details p {
+  color: #909090;
+  padding: 0 0 18px;
+}
+.portal-tutorial .tutorial-widget .faq-grid details a {
+  color: #c5c5c5;
+}
+.portal-tutorial .tutorial-widget .toast {
+  background: #242424;
+  color: #d9d9d9;
+  border-color: #ffffff24;
+  box-shadow: 0 10px 35px #0008;
+}
+.portal-tutorial .tutorial-widget .guide-card.swap-in .step-header {
+  animation: tutorial-header-in 0.35s ease both;
+}
+.portal-tutorial .tutorial-widget .guide-card.swap-in .step-body {
+  animation: none;
+}
+.portal-tutorial .tutorial-widget .guide-card.swap-in .instructions {
+  animation: tutorial-panel-in 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.portal-tutorial .tutorial-widget .guide-card.swap-in .visual-area {
+  animation: tutorial-panel-in 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes tutorial-header-in {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tutorial-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-tutorial .tutorial-widget *,
+  .portal-tutorial .tutorial-widget *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.motion-paused .portal-tutorial .tutorial-widget *,
+.motion-paused .portal-tutorial .tutorial-widget *::after {
+  animation: none !important;
+  transition: none !important;
+}

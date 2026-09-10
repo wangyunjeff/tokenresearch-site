@@ -1,0 +1,2526 @@
+{
+  "importVersion": "sub2api-2026-09-10",
+  "divisor": 35,
+  "models": [
+    {
+      "id": "m-5b3dddbb5791",
+      "code": "GPT-5.5",
+      "name": "GPT-5.5",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-a8b766654d05",
+      "code": "GPT5.5",
+      "name": "GPT5.5",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-64ce1f89d9d3",
+      "code": "claude-opus-4-8",
+      "name": "claude-opus-4-8",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-0802ec001e6a",
+      "code": "claude-opus-5",
+      "name": "claude-opus-5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-b89a09eeac4a",
+      "code": "claude-sonnet-4-6",
+      "name": "claude-sonnet-4-6",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-79642295d02b",
+      "code": "claude-sonnet-5",
+      "name": "claude-sonnet-5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-9a2c68c1ab4e",
+      "code": "gpt-5.5",
+      "name": "gpt-5.5",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-e81d42681e68",
+      "code": "gpt-5.5-turbo",
+      "name": "gpt-5.5-turbo",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-baa9f0e9b4bf",
+      "code": "gpt-5.6",
+      "name": "gpt-5.6",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-3cbb05c5c0b9",
+      "code": "gpt-5.6 Sol",
+      "name": "gpt-5.6 Sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-6b6cb90c1578",
+      "code": "gpt-5.6-sol",
+      "name": "gpt-5.6-sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-22cc6f05b2c6",
+      "code": "gpt-6",
+      "name": "gpt-6",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-5e8daeddcb78",
+      "code": "claude-3-haiku",
+      "name": "claude-3-haiku",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-651db476218c",
+      "code": "claude-haiku-4-5",
+      "name": "claude-haiku-4-5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-71c98d7bfc5e",
+      "code": "claude-3-opus",
+      "name": "claude-3-opus",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-b435550f9698",
+      "code": "claude-3-opus-20240229",
+      "name": "claude-3-opus-20240229",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-6d92bfd2ad9a",
+      "code": "claude-3-sonnet",
+      "name": "claude-3-sonnet",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1a3d38ee09a4",
+      "code": "claude-3-sonnet-20240229",
+      "name": "claude-3-sonnet-20240229",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-02091fcf60d4",
+      "code": "claude-3.5-sonnet",
+      "name": "claude-3.5-sonnet",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-80dbd825d5f5",
+      "code": "claude-3.5-sonnet-20241022",
+      "name": "claude-3.5-sonnet-20241022",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-9b433e7465d2",
+      "code": "claude-5-sonnet",
+      "name": "claude-5-sonnet",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-a1b1217cae25",
+      "code": "claude-opus-4.8",
+      "name": "claude-opus-4.8",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-b057acdfec9d",
+      "code": "claude-sonnet-5-20250514",
+      "name": "claude-sonnet-5-20250514",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-8dabf528e357",
+      "code": "gpt 5.5",
+      "name": "gpt 5.5",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-ab3c4f4595b3",
+      "code": "claude-haiku-4-5-20251001",
+      "name": "claude-haiku-4-5-20251001",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-9d61afd2b9f5",
+      "code": "gpt-5.4-mini",
+      "name": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-f5b7a068c71d",
+      "code": "codex-auto-review",
+      "name": "codex-auto-review",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-7bf2b83a5ca0",
+      "code": "gpt-5.6-luna",
+      "name": "gpt-5.6-luna",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-ed330399265f",
+      "code": "gpt-5",
+      "name": "gpt-5",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-6641e7fabcf7",
+      "code": "gpt-5.4",
+      "name": "gpt-5.4",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-23ec487ab61f",
+      "code": "gpt-5.5-pro",
+      "name": "gpt-5.5-pro",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-f914828b09a2",
+      "code": "gpt-5.6-terra",
+      "name": "gpt-5.6-terra",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-bfb342f6d78a",
+      "code": "gpt-6-astra",
+      "name": "gpt-6-astra",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-4de6ac70f538",
+      "code": "gpt-image-1",
+      "name": "gpt-image-1",
+      "provider": "OpenAI",
+      "description": "图像模型的 token 价格；完整生成费用请结合请求的计费项目查看。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-63f9de261054",
+      "code": "gpt-image-1.5",
+      "name": "gpt-image-1.5",
+      "provider": "OpenAI",
+      "description": "图像模型的 token 价格；完整生成费用请结合请求的计费项目查看。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-8e6e1699bb42",
+      "code": "gpt-image-2",
+      "name": "gpt-image-2",
+      "provider": "OpenAI",
+      "description": "图像模型的 token 价格；完整生成费用请结合请求的计费项目查看。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-954b4513f114",
+      "code": "GPT 5.6 Sol",
+      "name": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-b58ee8454107",
+      "code": "claude-opus-4-6",
+      "name": "claude-opus-4-6",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-0c25a29e9be8",
+      "code": "GPT-5.6 Sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-326b1d8bc470",
+      "code": "claude-3-5-sonnet-latest",
+      "name": "claude-3-5-sonnet-latest",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-73a31814922b",
+      "code": "gpt-5.6-Sol",
+      "name": "gpt-5.6-Sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-ebedfe8439ab",
+      "code": "claude-3-haiku-latest",
+      "name": "claude-3-haiku-latest",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-28abb84155f6",
+      "code": "gpt-5.4-2026-03-05",
+      "name": "gpt-5.4-2026-03-05",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-339f0edafb84",
+      "code": "claude-fable-5",
+      "name": "claude-fable-5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-12cf822938e5",
+      "code": "claude-fable-5-1",
+      "name": "claude-fable-5-1",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-24a944a18c97",
+      "code": "claude-opus-4-7",
+      "name": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-05740e721354",
+      "code": "GPT-5.6 Luna",
+      "name": "GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-a174893ee574",
+      "code": "gpt-5.6 Luna",
+      "name": "gpt-5.6 Luna",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-fa691b8cb9c1",
+      "code": "GPT-5.6-sol",
+      "name": "GPT-5.6-sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-9ed14c80ef92",
+      "code": "claude-sonnet-4-5",
+      "name": "claude-sonnet-4-5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1b2588bb3500",
+      "code": "gpt-5.6 sol",
+      "name": "gpt-5.6 sol",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-61b409258f3b",
+      "code": "gpt5.6",
+      "name": "gpt5.6",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-3555aa0e1976",
+      "code": "gpt-5.",
+      "name": "gpt-5.",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-c7bb5aff1510",
+      "code": "gpt-5.3-codex-spark",
+      "name": "gpt-5.3-codex-spark",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-7ef9806ada4b",
+      "code": "gpt5.4-mini",
+      "name": "gpt5.4-mini",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1d970e8dcda3",
+      "code": "gpt5.6-luna",
+      "name": "gpt5.6-luna",
+      "provider": "OpenAI",
+      "description": "用于阅读、写作与代码任务；按实际调用的模型 ID 选择。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-80e64fd43378",
+      "code": "claude-3-5-haiku-20241022",
+      "name": "claude-3-5-haiku-20241022",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-95b0e3e5bcdd",
+      "code": "claude-opus-4.6",
+      "name": "claude-opus-4.6",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-d556e47cd780",
+      "code": "claude-sonnet-4-6-kiro",
+      "name": "claude-sonnet-4-6-kiro",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-d9e4a329b3a2",
+      "code": "claude-opus-4-20250514",
+      "name": "claude-opus-4-20250514",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-5487bac0bacc",
+      "code": "claude-sonnet-4-20250514",
+      "name": "claude-sonnet-4-20250514",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-739bd0296292",
+      "code": "grok",
+      "name": "grok",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-e9f89dbb9224",
+      "code": "grok-4.5-latest",
+      "name": "grok-4.5-latest",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1e192b7a3751",
+      "code": "grok-4.6",
+      "name": "grok-4.6",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1cde2196f508",
+      "code": "grok-4.6-latest",
+      "name": "grok-4.6-latest",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-23ba418726e0",
+      "code": "grok-latest",
+      "name": "grok-latest",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-75c3bfd21f75",
+      "code": "grok/grok-4.6",
+      "name": "grok/grok-4.6",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-3bb9e27c273f",
+      "code": "grok-4.3",
+      "name": "grok-4.3",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-2093bc88823c",
+      "code": "grok-4.5",
+      "name": "grok-4.5",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-724d1a3f8a1e",
+      "code": "grok-build-latest",
+      "name": "grok-build-latest",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-ed90f076a615",
+      "code": "grok-composer-2.5-fast",
+      "name": "grok-composer-2.5-fast",
+      "provider": "xAI",
+      "description": "用于问题讨论、材料整理与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-9c3b61e40d24",
+      "code": "claude-sonnet-4.5",
+      "name": "claude-sonnet-4.5",
+      "provider": "Anthropic",
+      "description": "围绕长篇材料、研究写作与代码展开协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-d66be534a42c",
+      "code": "deepseek-3.2",
+      "name": "deepseek-3.2",
+      "provider": "DeepSeek",
+      "description": "用于推理讨论、代码与研究材料整理。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1e0d1bd6443a",
+      "code": "MiniMax-M2.7",
+      "name": "MiniMax-M2.7",
+      "provider": "MiniMax",
+      "description": "用于日常问答、文本处理与代码协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-b52c3a32aa38",
+      "code": "MiniMax-M3",
+      "name": "MiniMax-M3",
+      "provider": "MiniMax",
+      "description": "用于日常问答、文本处理与代码协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-e82c5cf560d4",
+      "code": "deepseek-v4-flash",
+      "name": "deepseek-v4-flash",
+      "provider": "DeepSeek",
+      "description": "用于推理讨论、代码与研究材料整理。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-54ccbac20357",
+      "code": "deepseek-v4-flash-0731",
+      "name": "deepseek-v4-flash-0731",
+      "provider": "DeepSeek",
+      "description": "用于推理讨论、代码与研究材料整理。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-73f24d98b3c1",
+      "code": "kimi-k2.7-code",
+      "name": "kimi-k2.7-code",
+      "provider": "Moonshot",
+      "description": "用于阅读材料、整理笔记与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1b2f2db45ac8",
+      "code": "kimi-k3",
+      "name": "kimi-k3",
+      "provider": "Moonshot",
+      "description": "用于阅读材料、整理笔记与代码任务。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-35538adaca4d",
+      "code": "qwen3.8-flash",
+      "name": "qwen3.8-flash",
+      "provider": "通义千问",
+      "description": "用于日常问答、文本处理与研究协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-1fff15ba58df",
+      "code": "qwen3.8-max",
+      "name": "qwen3.8-max",
+      "provider": "通义千问",
+      "description": "用于日常问答、文本处理与研究协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-c45881ff8ccc",
+      "code": "qwen3.8-max-0902",
+      "name": "qwen3.8-max-0902",
+      "provider": "通义千问",
+      "description": "用于日常问答、文本处理与研究协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    },
+    {
+      "id": "m-03ee1b2dbca1",
+      "code": "glm-5.2",
+      "name": "glm-5.2",
+      "provider": "智谱",
+      "description": "用于文本分析、研究问答与代码协作。",
+      "unit": "tokens",
+      "inputUsd": null,
+      "outputUsd": null,
+      "cacheReadUsd": null,
+      "cacheWriteUsd": null,
+      "scope": "",
+      "source": "",
+      "verifiedAt": "2026-09-10",
+      "enabled": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "sub2api-2",
+      "name": "plus",
+      "multiplier": 1.05,
+      "referenceMultiplier": 1.05,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-5b3dddbb5791",
+        "m-a8b766654d05",
+        "m-64ce1f89d9d3",
+        "m-0802ec001e6a",
+        "m-b89a09eeac4a",
+        "m-79642295d02b",
+        "m-9a2c68c1ab4e",
+        "m-e81d42681e68",
+        "m-baa9f0e9b4bf",
+        "m-3cbb05c5c0b9",
+        "m-6b6cb90c1578",
+        "m-22cc6f05b2c6",
+        "m-5e8daeddcb78",
+        "m-651db476218c",
+        "m-71c98d7bfc5e",
+        "m-b435550f9698",
+        "m-6d92bfd2ad9a",
+        "m-1a3d38ee09a4",
+        "m-02091fcf60d4",
+        "m-80dbd825d5f5",
+        "m-9b433e7465d2",
+        "m-a1b1217cae25",
+        "m-b057acdfec9d",
+        "m-8dabf528e357",
+        "m-ab3c4f4595b3",
+        "m-9d61afd2b9f5",
+        "m-f5b7a068c71d",
+        "m-7bf2b83a5ca0",
+        "m-ed330399265f",
+        "m-6641e7fabcf7",
+        "m-23ec487ab61f",
+        "m-f914828b09a2",
+        "m-bfb342f6d78a",
+        "m-4de6ac70f538",
+        "m-63f9de261054",
+        "m-8e6e1699bb42"
+      ],
+      "prices": {
+        "m-5b3dddbb5791": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-a8b766654d05": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-64ce1f89d9d3": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-0802ec001e6a": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-b89a09eeac4a": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-79642295d02b": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-9a2c68c1ab4e": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-e81d42681e68": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-baa9f0e9b4bf": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-3cbb05c5c0b9": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-6b6cb90c1578": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-22cc6f05b2c6": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-5e8daeddcb78": {
+          "input": 0.1575,
+          "cache": null,
+          "output": 0.945
+        },
+        "m-651db476218c": {
+          "input": 0.1575,
+          "cache": null,
+          "output": 0.945
+        },
+        "m-71c98d7bfc5e": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-b435550f9698": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-6d92bfd2ad9a": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-1a3d38ee09a4": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-02091fcf60d4": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-80dbd825d5f5": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-9b433e7465d2": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-a1b1217cae25": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-b057acdfec9d": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-8dabf528e357": {
+          "input": 1.05,
+          "cache": null,
+          "output": 6.3
+        },
+        "m-ab3c4f4595b3": {
+          "input": 0.1575,
+          "cache": 0.01575,
+          "output": 0.945
+        },
+        "m-9d61afd2b9f5": {
+          "input": 0.1575,
+          "cache": 0.01575,
+          "output": 0.945
+        },
+        "m-f5b7a068c71d": {
+          "input": 0.042,
+          "cache": 0.0042,
+          "output": 0.252
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.042,
+          "cache": 0.0042,
+          "output": 0.252
+        },
+        "m-ed330399265f": {
+          "input": 0.2625,
+          "cache": 0.02625,
+          "output": 2.1
+        },
+        "m-6641e7fabcf7": {
+          "input": 0.525,
+          "cache": 0.0525,
+          "output": 3.15
+        },
+        "m-23ec487ab61f": {
+          "input": 6.3,
+          "cache": 0.63,
+          "output": 37.8
+        },
+        "m-f914828b09a2": {
+          "input": 0.42,
+          "cache": 0.042,
+          "output": 2.52
+        },
+        "m-bfb342f6d78a": {
+          "input": 2.1,
+          "cache": 0.21,
+          "output": 10.5
+        },
+        "m-4de6ac70f538": {
+          "input": 1.05,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-63f9de261054": {
+          "input": 1.05,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-8e6e1699bb42": {
+          "input": 1.05,
+          "cache": 0.2625,
+          "output": 0.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-13",
+      "name": "pro",
+      "multiplier": 1.3,
+      "referenceMultiplier": 1.3,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-954b4513f114",
+        "m-b58ee8454107",
+        "m-0c25a29e9be8",
+        "m-326b1d8bc470",
+        "m-64ce1f89d9d3",
+        "m-0802ec001e6a",
+        "m-79642295d02b",
+        "m-9a2c68c1ab4e",
+        "m-baa9f0e9b4bf",
+        "m-73a31814922b",
+        "m-6b6cb90c1578",
+        "m-ebedfe8439ab",
+        "m-9d61afd2b9f5",
+        "m-ab3c4f4595b3",
+        "m-f5b7a068c71d",
+        "m-7bf2b83a5ca0",
+        "m-6641e7fabcf7",
+        "m-28abb84155f6",
+        "m-f914828b09a2",
+        "m-22cc6f05b2c6",
+        "m-bfb342f6d78a",
+        "m-4de6ac70f538",
+        "m-8e6e1699bb42"
+      ],
+      "prices": {
+        "m-954b4513f114": {
+          "input": 1.3,
+          "cache": null,
+          "output": 7.8
+        },
+        "m-b58ee8454107": {
+          "input": 1.3,
+          "cache": null,
+          "output": 7.8
+        },
+        "m-0c25a29e9be8": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-326b1d8bc470": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-64ce1f89d9d3": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-0802ec001e6a": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-79642295d02b": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-9a2c68c1ab4e": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-baa9f0e9b4bf": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-73a31814922b": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-6b6cb90c1578": {
+          "input": 1.3,
+          "cache": 0.13,
+          "output": 7.8
+        },
+        "m-ebedfe8439ab": {
+          "input": 0.195,
+          "cache": 0.0195,
+          "output": 1.17
+        },
+        "m-9d61afd2b9f5": {
+          "input": 0.195,
+          "cache": 0.0195,
+          "output": 1.17
+        },
+        "m-ab3c4f4595b3": {
+          "input": 0.195,
+          "cache": null,
+          "output": 1.17
+        },
+        "m-f5b7a068c71d": {
+          "input": 0.052,
+          "cache": 0.0052,
+          "output": 0.312
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.052,
+          "cache": 0.0052,
+          "output": 0.312
+        },
+        "m-6641e7fabcf7": {
+          "input": 0.65,
+          "cache": 0.065,
+          "output": 3.9
+        },
+        "m-28abb84155f6": {
+          "input": 0.65,
+          "cache": null,
+          "output": 3.9
+        },
+        "m-f914828b09a2": {
+          "input": 0.52,
+          "cache": 0.052,
+          "output": 3.12
+        },
+        "m-22cc6f05b2c6": {
+          "input": 2.6,
+          "cache": null,
+          "output": 13.0
+        },
+        "m-bfb342f6d78a": {
+          "input": 2.6,
+          "cache": 0.26,
+          "output": 13.0
+        },
+        "m-4de6ac70f538": {
+          "input": 1.3,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-8e6e1699bb42": {
+          "input": 1.3,
+          "cache": 0.325,
+          "output": 0.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-30",
+      "name": "claude-max满血",
+      "multiplier": 5.5,
+      "referenceMultiplier": 5.5,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-339f0edafb84",
+        "m-12cf822938e5",
+        "m-ab3c4f4595b3",
+        "m-b58ee8454107",
+        "m-24a944a18c97",
+        "m-64ce1f89d9d3",
+        "m-0802ec001e6a",
+        "m-b89a09eeac4a",
+        "m-79642295d02b"
+      ],
+      "prices": {
+        "m-339f0edafb84": {
+          "input": 11.0,
+          "cache": 1.1,
+          "output": 55.0
+        },
+        "m-12cf822938e5": {
+          "input": 11.0,
+          "cache": 0.275,
+          "output": 55.0
+        },
+        "m-ab3c4f4595b3": {
+          "input": 1.1,
+          "cache": 0.11,
+          "output": 5.5
+        },
+        "m-b58ee8454107": {
+          "input": 5.5,
+          "cache": 0.55,
+          "output": 27.5
+        },
+        "m-24a944a18c97": {
+          "input": 5.5,
+          "cache": 0.55,
+          "output": 27.5
+        },
+        "m-64ce1f89d9d3": {
+          "input": 5.5,
+          "cache": 0.55,
+          "output": 27.5
+        },
+        "m-0802ec001e6a": {
+          "input": 5.5,
+          "cache": 0.55,
+          "output": 27.5
+        },
+        "m-b89a09eeac4a": {
+          "input": 3.3,
+          "cache": 0.33,
+          "output": 16.5
+        },
+        "m-79642295d02b": {
+          "input": 2.2,
+          "cache": 0.22,
+          "output": 11.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-32",
+      "name": "薅资本主义羊毛（慈禧太后已经付过钱了）",
+      "multiplier": 0.75,
+      "referenceMultiplier": 0.75,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-05740e721354",
+        "m-ab3c4f4595b3",
+        "m-f5b7a068c71d",
+        "m-a174893ee574",
+        "m-7bf2b83a5ca0",
+        "m-0c25a29e9be8",
+        "m-fa691b8cb9c1",
+        "m-0802ec001e6a",
+        "m-79642295d02b",
+        "m-9a2c68c1ab4e",
+        "m-baa9f0e9b4bf",
+        "m-3cbb05c5c0b9",
+        "m-6b6cb90c1578",
+        "m-9ed14c80ef92",
+        "m-1b2588bb3500",
+        "m-61b409258f3b",
+        "m-3555aa0e1976",
+        "m-6641e7fabcf7",
+        "m-c7bb5aff1510",
+        "m-9d61afd2b9f5",
+        "m-f914828b09a2",
+        "m-22cc6f05b2c6",
+        "m-bfb342f6d78a",
+        "m-7ef9806ada4b",
+        "m-1d970e8dcda3"
+      ],
+      "prices": {
+        "m-05740e721354": {
+          "input": 0.03,
+          "cache": 0.003,
+          "output": 0.18
+        },
+        "m-ab3c4f4595b3": {
+          "input": 0.03,
+          "cache": 0.003,
+          "output": 0.18
+        },
+        "m-f5b7a068c71d": {
+          "input": 0.03,
+          "cache": 0.003,
+          "output": 0.18
+        },
+        "m-a174893ee574": {
+          "input": 0.03,
+          "cache": 0.003,
+          "output": 0.18
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.03,
+          "cache": 0.003,
+          "output": 0.18
+        },
+        "m-0c25a29e9be8": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-fa691b8cb9c1": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-0802ec001e6a": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-79642295d02b": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-9a2c68c1ab4e": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-baa9f0e9b4bf": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-3cbb05c5c0b9": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-6b6cb90c1578": {
+          "input": 0.75,
+          "cache": 0.075,
+          "output": 4.5
+        },
+        "m-9ed14c80ef92": {
+          "input": 0.75,
+          "cache": null,
+          "output": 4.5
+        },
+        "m-1b2588bb3500": {
+          "input": 0.75,
+          "cache": null,
+          "output": 4.5
+        },
+        "m-61b409258f3b": {
+          "input": 0.75,
+          "cache": null,
+          "output": 4.5
+        },
+        "m-3555aa0e1976": {
+          "input": 0.375,
+          "cache": 0.0375,
+          "output": 2.25
+        },
+        "m-6641e7fabcf7": {
+          "input": 0.375,
+          "cache": 0.0375,
+          "output": 2.25
+        },
+        "m-c7bb5aff1510": {
+          "input": 0.2625,
+          "cache": 0.02625,
+          "output": 2.1
+        },
+        "m-9d61afd2b9f5": {
+          "input": 0.1125,
+          "cache": 0.01125,
+          "output": 0.675
+        },
+        "m-f914828b09a2": {
+          "input": 0.3,
+          "cache": 0.03,
+          "output": 1.8
+        },
+        "m-22cc6f05b2c6": {
+          "input": 1.5,
+          "cache": null,
+          "output": 7.5
+        },
+        "m-bfb342f6d78a": {
+          "input": 1.5,
+          "cache": 0.15,
+          "output": 7.5
+        },
+        "m-7ef9806ada4b": {
+          "input": 0.1125,
+          "cache": null,
+          "output": 0.675
+        },
+        "m-1d970e8dcda3": {
+          "input": 0.03,
+          "cache": null,
+          "output": 0.18
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-35",
+      "name": "kiro-高缓存1m上下文",
+      "multiplier": 0.7,
+      "referenceMultiplier": 0.7,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-80e64fd43378",
+        "m-651db476218c",
+        "m-ab3c4f4595b3",
+        "m-339f0edafb84",
+        "m-b58ee8454107",
+        "m-24a944a18c97",
+        "m-64ce1f89d9d3",
+        "m-95b0e3e5bcdd",
+        "m-a1b1217cae25",
+        "m-0802ec001e6a",
+        "m-b89a09eeac4a",
+        "m-d556e47cd780",
+        "m-79642295d02b",
+        "m-7bf2b83a5ca0",
+        "m-6b6cb90c1578",
+        "m-f914828b09a2"
+      ],
+      "prices": {
+        "m-80e64fd43378": {
+          "input": 0.14,
+          "cache": 0.014,
+          "output": 0.7
+        },
+        "m-651db476218c": {
+          "input": 0.14,
+          "cache": 0.014,
+          "output": 0.7
+        },
+        "m-ab3c4f4595b3": {
+          "input": 0.14,
+          "cache": 0.014,
+          "output": 0.7
+        },
+        "m-339f0edafb84": {
+          "input": 1.4,
+          "cache": 0.14,
+          "output": 7.0
+        },
+        "m-b58ee8454107": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-24a944a18c97": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-64ce1f89d9d3": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-95b0e3e5bcdd": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-a1b1217cae25": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-0802ec001e6a": {
+          "input": 0.7,
+          "cache": 0.07,
+          "output": 3.5
+        },
+        "m-b89a09eeac4a": {
+          "input": 0.42,
+          "cache": 0.042,
+          "output": 2.1
+        },
+        "m-d556e47cd780": {
+          "input": 0.42,
+          "cache": null,
+          "output": 2.1
+        },
+        "m-79642295d02b": {
+          "input": 0.28,
+          "cache": 0.028,
+          "output": 1.4
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.14,
+          "cache": null,
+          "output": 0.84
+        },
+        "m-6b6cb90c1578": {
+          "input": 0.7,
+          "cache": null,
+          "output": 4.2
+        },
+        "m-f914828b09a2": {
+          "input": 0.35,
+          "cache": null,
+          "output": 2.1
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-39",
+      "name": "【Grok】Grok-heavy",
+      "multiplier": 1.2,
+      "referenceMultiplier": 1.2,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-326b1d8bc470",
+        "m-ab3c4f4595b3",
+        "m-d9e4a329b3a2",
+        "m-64ce1f89d9d3",
+        "m-0802ec001e6a",
+        "m-5487bac0bacc",
+        "m-b89a09eeac4a",
+        "m-79642295d02b",
+        "m-baa9f0e9b4bf",
+        "m-739bd0296292",
+        "m-e9f89dbb9224",
+        "m-1e192b7a3751",
+        "m-1cde2196f508",
+        "m-23ba418726e0",
+        "m-75c3bfd21f75",
+        "m-9a2c68c1ab4e",
+        "m-7bf2b83a5ca0",
+        "m-bfb342f6d78a",
+        "m-3bb9e27c273f",
+        "m-2093bc88823c",
+        "m-724d1a3f8a1e",
+        "m-ed90f076a615"
+      ],
+      "prices": {
+        "m-326b1d8bc470": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-ab3c4f4595b3": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-d9e4a329b3a2": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-64ce1f89d9d3": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-0802ec001e6a": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-5487bac0bacc": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-b89a09eeac4a": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-79642295d02b": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-baa9f0e9b4bf": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-739bd0296292": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-e9f89dbb9224": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-1e192b7a3751": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-1cde2196f508": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-23ba418726e0": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-75c3bfd21f75": {
+          "input": 0.48,
+          "cache": 0.12,
+          "output": 1.44
+        },
+        "m-9a2c68c1ab4e": {
+          "input": 1.2,
+          "cache": 0.12,
+          "output": 7.2
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.048,
+          "cache": 0.0048,
+          "output": 0.288
+        },
+        "m-bfb342f6d78a": {
+          "input": 2.4,
+          "cache": 0.24,
+          "output": 12.0
+        },
+        "m-3bb9e27c273f": {
+          "input": 0.3,
+          "cache": 0.048,
+          "output": 0.6
+        },
+        "m-2093bc88823c": {
+          "input": 0.48,
+          "cache": 0.072,
+          "output": 1.44
+        },
+        "m-724d1a3f8a1e": {
+          "input": 0.24,
+          "cache": 0.048,
+          "output": 0.48
+        },
+        "m-ed90f076a615": {
+          "input": 0.24,
+          "cache": 0.048,
+          "output": 0.48
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-42",
+      "name": "pro快速通道",
+      "multiplier": 1.05,
+      "referenceMultiplier": 1.05,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-0c25a29e9be8",
+        "m-9a2c68c1ab4e",
+        "m-baa9f0e9b4bf",
+        "m-6b6cb90c1578",
+        "m-f5b7a068c71d",
+        "m-7bf2b83a5ca0",
+        "m-c7bb5aff1510",
+        "m-6641e7fabcf7",
+        "m-9d61afd2b9f5",
+        "m-f914828b09a2",
+        "m-bfb342f6d78a"
+      ],
+      "prices": {
+        "m-0c25a29e9be8": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-9a2c68c1ab4e": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-baa9f0e9b4bf": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-6b6cb90c1578": {
+          "input": 1.05,
+          "cache": 0.105,
+          "output": 6.3
+        },
+        "m-f5b7a068c71d": {
+          "input": 0.042,
+          "cache": 0.0042,
+          "output": 0.252
+        },
+        "m-7bf2b83a5ca0": {
+          "input": 0.042,
+          "cache": 0.0042,
+          "output": 0.252
+        },
+        "m-c7bb5aff1510": {
+          "input": 0.3675,
+          "cache": 0.03675,
+          "output": 2.94
+        },
+        "m-6641e7fabcf7": {
+          "input": 0.525,
+          "cache": 0.0525,
+          "output": 3.15
+        },
+        "m-9d61afd2b9f5": {
+          "input": 0.1575,
+          "cache": 0.01575,
+          "output": 0.945
+        },
+        "m-f914828b09a2": {
+          "input": 0.42,
+          "cache": 0.042,
+          "output": 2.52
+        },
+        "m-bfb342f6d78a": {
+          "input": 2.1,
+          "cache": 0.21,
+          "output": 10.5
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-50",
+      "name": "kiro快速通道（测试中）",
+      "multiplier": 0.1,
+      "referenceMultiplier": 0.1,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-9c3b61e40d24",
+        "m-d66be534a42c"
+      ],
+      "prices": {
+        "m-9c3b61e40d24": {
+          "input": 0.06,
+          "cache": null,
+          "output": 0.3
+        },
+        "m-d66be534a42c": {
+          "input": 0.0,
+          "cache": null,
+          "output": 0.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-56",
+      "name": "【Anthropic】Kiro-claude正价版",
+      "multiplier": 2.0,
+      "referenceMultiplier": 2.0,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-ab3c4f4595b3",
+        "m-b58ee8454107",
+        "m-0802ec001e6a",
+        "m-79642295d02b"
+      ],
+      "prices": {
+        "m-ab3c4f4595b3": {
+          "input": 0.4,
+          "cache": 0.04,
+          "output": 2.0
+        },
+        "m-b58ee8454107": {
+          "input": 2.0,
+          "cache": 0.2,
+          "output": 10.0
+        },
+        "m-0802ec001e6a": {
+          "input": 2.0,
+          "cache": 0.2,
+          "output": 10.0
+        },
+        "m-79642295d02b": {
+          "input": 0.8,
+          "cache": 0.08,
+          "output": 4.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-59",
+      "name": "【国产模型补贴】",
+      "multiplier": 0.1,
+      "referenceMultiplier": 0.1,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-1e0d1bd6443a",
+        "m-b52c3a32aa38",
+        "m-e82c5cf560d4",
+        "m-54ccbac20357",
+        "m-73f24d98b3c1",
+        "m-1b2f2db45ac8",
+        "m-35538adaca4d",
+        "m-1fff15ba58df",
+        "m-c45881ff8ccc"
+      ],
+      "prices": {
+        "m-1e0d1bd6443a": {
+          "input": 0.006,
+          "cache": null,
+          "output": 0.024
+        },
+        "m-b52c3a32aa38": {
+          "input": 0.012,
+          "cache": 0.0024,
+          "output": 0.048
+        },
+        "m-e82c5cf560d4": {
+          "input": 0.0044,
+          "cache": 0.00014,
+          "output": 0.0132
+        },
+        "m-54ccbac20357": {
+          "input": 0.0044,
+          "cache": 0.00014,
+          "output": 0.0132
+        },
+        "m-73f24d98b3c1": {
+          "input": 0.0112,
+          "cache": null,
+          "output": 0.0448
+        },
+        "m-1b2f2db45ac8": {
+          "input": 0.06,
+          "cache": 0.006,
+          "output": 0.3
+        },
+        "m-35538adaca4d": {
+          "input": 0.0,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-1fff15ba58df": {
+          "input": 0.0,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-c45881ff8ccc": {
+          "input": 0.0,
+          "cache": 0.0,
+          "output": 0.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-60",
+      "name": "【国产模型】",
+      "multiplier": 1.5,
+      "referenceMultiplier": 1.5,
+      "description": "",
+      "enabled": true,
+      "modelIds": [
+        "m-1e0d1bd6443a",
+        "m-b52c3a32aa38",
+        "m-e82c5cf560d4",
+        "m-03ee1b2dbca1",
+        "m-73f24d98b3c1",
+        "m-1b2f2db45ac8",
+        "m-35538adaca4d",
+        "m-1fff15ba58df",
+        "m-c45881ff8ccc"
+      ],
+      "prices": {
+        "m-1e0d1bd6443a": {
+          "input": 0.09,
+          "cache": null,
+          "output": 0.36
+        },
+        "m-b52c3a32aa38": {
+          "input": 0.18,
+          "cache": 0.036,
+          "output": 0.72
+        },
+        "m-e82c5cf560d4": {
+          "input": 0.132,
+          "cache": null,
+          "output": 0.396
+        },
+        "m-03ee1b2dbca1": {
+          "input": 0.42,
+          "cache": 0.078,
+          "output": 1.32
+        },
+        "m-73f24d98b3c1": {
+          "input": 0.168,
+          "cache": null,
+          "output": 0.672
+        },
+        "m-1b2f2db45ac8": {
+          "input": 0.9,
+          "cache": null,
+          "output": 4.5
+        },
+        "m-35538adaca4d": {
+          "input": 0.0,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-1fff15ba58df": {
+          "input": 0.0,
+          "cache": null,
+          "output": 0.0
+        },
+        "m-c45881ff8ccc": {
+          "input": 0.0,
+          "cache": 0.0,
+          "output": 0.0
+        }
+      },
+      "priceBasis": "observed",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-protocol-openai",
+      "name": "国产模型-openai协议",
+      "multiplier": 1.2,
+      "referenceMultiplier": 1.2,
+      "description": "Openai 协议接入",
+      "enabled": true,
+      "modelIds": [
+        "m-03ee1b2dbca1"
+      ],
+      "prices": {
+        "m-03ee1b2dbca1": {
+          "input": 1.92,
+          "cache": 0.48,
+          "output": 6.72
+        }
+      },
+      "priceBasis": "configured",
+      "priceDate": "2026-09-10"
+    },
+    {
+      "id": "sub2api-protocol-anthropic",
+      "name": "国产模型-anthropic协议",
+      "multiplier": 1.2,
+      "referenceMultiplier": 1.2,
+      "description": "Anthropic 协议接入",
+      "enabled": true,
+      "modelIds": [
+        "m-03ee1b2dbca1"
+      ],
+      "prices": {
+        "m-03ee1b2dbca1": {
+          "input": 1.92,
+          "cache": 0.48,
+          "output": 6.72
+        }
+      },
+      "priceBasis": "configured",
+      "priceDate": "2026-09-10"
+    }
+  ]
+}

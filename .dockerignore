@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.env
+.local-data
+.sites-runtime
+data
+artifacts
+.openai
+public/__qa_mobile.html
+
+!server/data
+!server/data/price-snapshot.json
+!server/data/sub2api-model-prices-20260910.md

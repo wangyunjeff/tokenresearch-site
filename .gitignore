@@ -1,0 +1,10 @@
+.sites-runtime/
+.DS_Store
+node_modules/
+dist/
+.env
+.local-data/
+/data/
+artifacts/
+.env.*
+!.env.example
