@@ -2804,6 +2804,24 @@
   color: #eee;
   background: #ffffff06;
 }
+.filter-chips button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+.filter-chips button:disabled:hover {
+  border-color: #ffffff19;
+  color: #a6aaa7;
+  background: #ffffff03;
+}
+.group-chips button.locked > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.group-chips button.locked svg {
+  color: #b7c4a9;
+  flex: 0 0 auto;
+}
 .filter-chips button.selected {
   border-color: #b6c99d80;
   background: #b6c99d13;

@@ -1,16 +1,95 @@
 import snapshot from './data/price-snapshot.json' with { type: 'json' };
 
-const portalRevision = 'entry-2026-09-10';
+const portalRevision = 'catalog-groups-2026-09-11';
 const removedGroups = new Set([
   'sub2api-protocol-openai',
   'sub2api-protocol-anthropic',
   'sub2api-50',
 ]);
+const openAIModels = [
+  'codex-auto-review',
+  'gpt-5.3-codex-spark',
+  'gpt-5.5',
+  'gpt-5.6-sol',
+  'gpt-5.6-terra',
+  'gpt-6-astra',
+  'gpt-5.6-luna',
+];
+const anthropicModels = [
+  'claude-haiku-4-5-20251001',
+  'claude-opus-4-20250514',
+  'claude-opus-4-5-20251101',
+  'claude-opus-4-6',
+  'claude-opus-4-7',
+  'claude-opus-4-8',
+  'claude-opus-5',
+  'claude-sonnet-4-20250514',
+  'claude-sonnet-4-5-20250929',
+  'claude-sonnet-4-6',
+  'claude-sonnet-5',
+];
+const curatedGroups = new Map([
+  ['sub2api-2', { name: '【OpenAI】plus', models: openAIModels }],
+  ['sub2api-13', { name: '【OpenAI】pro', models: openAIModels }],
+  [
+    'sub2api-32',
+    { name: '【OpenAI】薅资本主义羊毛（慈禧太后已经付过钱了）', models: openAIModels },
+  ],
+  ['sub2api-42', { name: '【OpenAI】pro快速通道', models: openAIModels }],
+  ['sub2api-35', { name: '【Anthropic】kiro-高缓存1m上下文', models: anthropicModels }],
+  ['sub2api-56', { name: '【Anthropic】Kiro-claude正价版', models: anthropicModels }],
+  ['sub2api-30', { name: '【Anthropic】claude-max满血', models: anthropicModels }],
+]);
+const supplementalModels = [
+  'claude-opus-4-5-20251101',
+  'claude-sonnet-4-5-20250929',
+].map((code) => ({
+  id: `portal-${code}`,
+  code,
+  name: code,
+  provider: 'Anthropic',
+  description: '围绕长篇材料、研究写作与代码展开协作。',
+  unit: 'tokens',
+  inputUsd: null,
+  outputUsd: null,
+  cacheReadUsd: null,
+  cacheWriteUsd: null,
+  scope: '',
+  source: '',
+  verifiedAt: '2026-09-11',
+  enabled: true,
+}));
 function upgradePortal(data) {
   if (data.portalRevision === portalRevision) return data;
   const result = structuredClone(data);
   result.groups = result.groups.filter((g) => !removedGroups.has(g.id));
-  const modelsById = new Map(result.models.map((m) => [m.id, m]));
+  const modelsByCode = new Map(result.models.map((model) => [model.code, model]));
+  const modelsById = new Map(result.models.map((model) => [model.id, model]));
+  for (const code of new Set([...openAIModels, ...anthropicModels])) {
+    if (modelsByCode.has(code)) continue;
+    const source =
+      snapshot.models.find((model) => model.code === code) ||
+      supplementalModels.find((model) => model.code === code);
+    const existing = modelsById.get(source.id);
+    if (existing) {
+      modelsByCode.set(code, existing);
+      continue;
+    }
+    const model = structuredClone(source);
+    result.models.push(model);
+    modelsByCode.set(code, model);
+    modelsById.set(model.id, model);
+  }
+  for (const group of result.groups) {
+    const curated = curatedGroups.get(group.id);
+    if (!curated) continue;
+    group.name = curated.name;
+    group.modelIds = curated.models.map((code) => modelsByCode.get(code).id);
+    const allowed = new Set(group.modelIds);
+    group.prices = Object.fromEntries(
+      Object.entries(group.prices || {}).filter(([id]) => allowed.has(id)),
+    );
+  }
   for (const group of result.groups) {
     const originalGroup = snapshot.groups.find((g) => g.id === group.id);
     if (!originalGroup) continue;

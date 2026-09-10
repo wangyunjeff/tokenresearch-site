@@ -29,7 +29,7 @@ test('all 166 observed records match the supplied source; null and zero stay dis
     }
   }
   assert.equal(count, 166);
-  assert.equal(seed.models.length, 83);
+  assert.equal(seed.models.length, 85);
   assert.equal(seed.groups.length, 10);
   assert.equal(formatPrice(modelPrice(model('deepseek-v4-flash'), group(59), 35).cache), '0.00014');
   assert.equal(modelPrice(model('qwen3.8-max-0902'), group(59), 35).cache, 0);
@@ -65,7 +65,7 @@ test('changing an imported multiplier scales once; manual USD prices keep the di
 });
 test('validation and public filtering preserve group overrides and case-sensitive model IDs', () => {
   const data = validateCatalog(structuredClone(seed));
-  assert.equal(data.models.length, 83);
+  assert.equal(data.models.length, 85);
   assert.ok(model('GPT-5.5'));
   assert.ok(model('gpt-5.5'));
   assert.deepEqual(
@@ -125,7 +125,7 @@ test('import resolves group-name collisions without renaming owner groups', () =
   };
   const result = validateCatalog(withPriceImport(existing));
   assert.equal(result.groups.find((g) => g.id === 'owner-plus').name, 'plus');
-  assert.equal(result.groups.find((g) => g.id === 'sub2api-2').name, 'plus · 2026-09-10');
+  assert.equal(result.groups.find((g) => g.id === 'sub2api-2').name, '【OpenAI】plus');
   assert.equal(new Set(result.groups.map((g) => g.name)).size, 11);
 });
 
@@ -134,7 +134,7 @@ test('very small configured prices remain nonzero in display', () => {
   assert.equal(formatPrice(0), '0');
 });
 
-test('portal update removes the requested groups once and preserves owner records and multipliers', () => {
+test('portal update curates provider groups and preserves owner records and multipliers', () => {
   const original = structuredClone(snapshot);
   original.groups.push({
     id: 'mine',
@@ -151,6 +151,53 @@ test('portal update removes the requested groups once and preserves owner record
   for (const g of migrated.groups.filter((g) => g.id !== 'mine'))
     assert.equal(g.multiplier, snapshot.groups.find((old) => old.id === g.id).multiplier);
   assert.equal(original.groups.length, 14);
+  const codes = (id) => {
+    const ids = migrated.groups.find((g) => g.id === id).modelIds;
+    return ids.map((modelId) => migrated.models.find((m) => m.id === modelId).code);
+  };
+  const openAIModels = [
+    'codex-auto-review',
+    'gpt-5.3-codex-spark',
+    'gpt-5.5',
+    'gpt-5.6-sol',
+    'gpt-5.6-terra',
+    'gpt-6-astra',
+    'gpt-5.6-luna',
+  ];
+  const anthropicModels = [
+    'claude-haiku-4-5-20251001',
+    'claude-opus-4-20250514',
+    'claude-opus-4-5-20251101',
+    'claude-opus-4-6',
+    'claude-opus-4-7',
+    'claude-opus-4-8',
+    'claude-opus-5',
+    'claude-sonnet-4-20250514',
+    'claude-sonnet-4-5-20250929',
+    'claude-sonnet-4-6',
+    'claude-sonnet-5',
+  ];
+  for (const [id, name] of [
+    ['sub2api-2', '【OpenAI】plus'],
+    ['sub2api-13', '【OpenAI】pro'],
+    ['sub2api-32', '【OpenAI】薅资本主义羊毛（慈禧太后已经付过钱了）'],
+    ['sub2api-42', '【OpenAI】pro快速通道'],
+  ]) {
+    assert.equal(migrated.groups.find((g) => g.id === id).name, name);
+    assert.deepEqual(codes(id), openAIModels);
+  }
+  for (const [id, name] of [
+    ['sub2api-35', '【Anthropic】kiro-高缓存1m上下文'],
+    ['sub2api-56', '【Anthropic】Kiro-claude正价版'],
+    ['sub2api-30', '【Anthropic】claude-max满血'],
+  ]) {
+    assert.equal(migrated.groups.find((g) => g.id === id).name, name);
+    assert.deepEqual(codes(id), anthropicModels);
+  }
+  for (const code of ['claude-opus-4-5-20251101', 'claude-sonnet-4-5-20250929'])
+    assert.equal(migrated.models.find((m) => m.code === code).provider, 'Anthropic');
+  for (const group of migrated.groups)
+    assert.ok(Object.keys(group.prices || {}).every((id) => group.modelIds.includes(id)));
   const saved = validateCatalog(migrated);
   assert.equal(withPriceImport(saved), saved);
 });
