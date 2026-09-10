@@ -29,10 +29,10 @@ test('all 166 observed records match the supplied source; null and zero stay dis
     }
   }
   assert.equal(count, 166);
-  assert.equal(seed.models.length, 85);
+  assert.equal(seed.models.length, 102);
   assert.equal(seed.groups.length, 10);
   assert.equal(formatPrice(modelPrice(model('deepseek-v4-flash'), group(59), 35).cache), '0.00014');
-  assert.equal(modelPrice(model('qwen3.8-max-0902'), group(59), 35).cache, 0);
+  assert.equal(group(59).modelIds.includes(model('qwen3.8-max-0902').id), false);
   assert.equal(modelPrice(model('qwen3.8-max'), group(59), 35).cache, null);
   for (const protocol of ['openai', 'anthropic'])
     assert.deepEqual(
@@ -65,7 +65,7 @@ test('changing an imported multiplier scales once; manual USD prices keep the di
 });
 test('validation and public filtering preserve group overrides and case-sensitive model IDs', () => {
   const data = validateCatalog(structuredClone(seed));
-  assert.equal(data.models.length, 85);
+  assert.equal(data.models.length, 102);
   assert.ok(model('GPT-5.5'));
   assert.ok(model('gpt-5.5'));
   assert.deepEqual(
@@ -200,6 +200,29 @@ test('portal update curates provider groups and preserves owner records and mult
     assert.ok(Object.keys(group.prices || {}).every((id) => group.modelIds.includes(id)));
   const saved = validateCatalog(migrated);
   assert.equal(withPriceImport(saved), saved);
+});
+
+test('audited domestic groups contain exactly the requested model IDs', () => {
+  const expected = [
+    'MiniMax-M2.7', 'MiniMax-M2.7-highspeed', 'MiniMax-M3',
+    'deepseek-v4-flash', 'deepseek-v4-flash-0731', 'deepseek-v4-pro', 'deepseek-v4-pro-0813',
+    'doubao-seed-2-1-pro', 'doubao-seed-2-1-turbo', 'glm-5.1', 'glm-5.2',
+    'glm-5.2-fast-preview', 'glm-5.3', 'glm-5.3-flash', 'kimi-k2.5', 'kimi-k2.6',
+    'kimi-k2.7-code', 'kimi-k3', 'mimo-v2.5-pro', 'qwen3.6-flash', 'qwen3.6-plus',
+    'qwen3.7-flash', 'qwen3.7-max', 'qwen3.7-plus', 'qwen3.8-flash', 'qwen3.8-max',
+  ];
+  for (const id of ['sub2api-59', 'sub2api-60']) {
+    const g = seed.groups.find((group) => group.id === id);
+    assert.deepEqual(g.modelIds.map((modelId) => seed.models.find((m) => m.id === modelId).code), expected);
+  }
+  assert.ok(!seed.groups.find((g) => g.id === 'sub2api-59').modelIds.some((id) => seed.models.find((m) => m.id === id).code === 'qwen3.8-max-0902'));
+});
+
+test('audited Grok group contains only concrete models that passed the probe', () => {
+  const g = seed.groups.find((group) => group.id === 'sub2api-39');
+  assert.deepEqual(g.modelIds.map((id) => seed.models.find((m) => m.id === id).code), [
+    'grok', 'grok-4.5', 'grok-4.5-latest', 'grok-4.6', 'grok-4.6-latest', 'grok-latest',
+  ]);
 });
 
 test('USD originals come from the immutable source and remain stable after CNY and multiplier edits', () => {
