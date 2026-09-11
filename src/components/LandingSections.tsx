@@ -767,7 +767,7 @@ function Footer({
         </div>
         <div className="footer-bottom">
           <span>© 2026 词元智研 · Token Research</span>
-          <a href="https://tokenresearch.com.cn/" target="_blank" rel="noreferrer">
+          <a href="https://tokenresearch.com.cn/login" target="_blank" rel="noreferrer">
             API 中转站 <ArrowUpRight size={11} />
           </a>
           <button className="motion-toggle" onClick={toggleMotion} aria-pressed={paused}>

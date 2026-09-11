@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowUpRight, Terminal, Layers, Sparkles } from 'lucide-react';
 import { GALLERY_OPEN } from './availability';
 import { motion } from 'motion/react';
-export const RELAY_URL = 'https://tokenresearch.com.cn/';
+export const RELAY_URL = 'https://tokenresearch.com.cn/login';
 export function ProductEntries() {
   return (
     <section className="product-entries page-width" aria-label="词元智研产品入口">
