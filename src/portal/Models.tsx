@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Check,
   Copy,
-  LockKeyhole,
   Search,
   SlidersHorizontal,
 } from 'lucide-react';
@@ -79,7 +78,6 @@ const featured = [
   'claude-opus-5',
   'claude-sonnet-5',
 ];
-const lockedPricingGroups = new Set(['sub2api-59', 'sub2api-60']);
 const priority = (m: CatalogModel) => {
   const n = featured.indexOf(m.code);
   return n < 0 ? 100 : n;
@@ -99,8 +97,7 @@ export default function Models() {
         if (active) {
           setResult(value);
           setGroupId((old) =>
-            old === 'all' ||
-            (value.data.groups.some((g) => g.id === old) && !lockedPricingGroups.has(old))
+            old === 'all' || value.data.groups.some((g) => g.id === old)
               ? old
               : value.data.groups.find((g) => g.id === 'sub2api-2')?.id ||
                 value.data.groups[0]?.id ||
@@ -118,9 +115,7 @@ export default function Models() {
   const data = result?.data,
     group = data?.groups.find((g) => g.id === groupId);
   const selectedGroups =
-    data?.groups.filter(
-      (g) => !lockedPricingGroups.has(g.id) && (groupId === 'all' || g.id === groupId),
-    ) || [];
+    data?.groups.filter((g) => groupId === 'all' || g.id === groupId) || [];
   const groupModels =
     data?.models.filter((m) => selectedGroups.some((g) => g.modelIds.includes(m.id))) || [];
   const providers = [...new Set(groupModels.map((m) => m.provider))];
@@ -181,29 +176,20 @@ export default function Models() {
               >
                 所有分组
               </button>
-              {data!.groups.map((g) => {
-                const locked = lockedPricingGroups.has(g.id);
-                return (
-                  <button
-                    key={g.id}
-                    className={`${g.id === groupId ? 'selected' : ''}${locked ? ' locked' : ''}`}
-                    aria-pressed={g.id === groupId}
-                    aria-disabled={locked}
-                    disabled={locked}
-                    title={locked ? '价格核对中，暂不可选' : undefined}
-                    onClick={() => {
-                      setGroupId(g.id);
-                      setProvider('all');
-                    }}
-                  >
-                    <span>
-                      {g.name}
-                      {locked && <LockKeyhole size={12} aria-hidden="true" />}
-                    </span>
-                    <em>×{g.multiplier == null ? '待定' : formatPrice(g.multiplier)}</em>
-                  </button>
-                );
-              })}
+              {data!.groups.map((g) => (
+                <button
+                  key={g.id}
+                  className={g.id === groupId ? 'selected' : ''}
+                  aria-pressed={g.id === groupId}
+                  onClick={() => {
+                    setGroupId(g.id);
+                    setProvider('all');
+                  }}
+                >
+                  <span>{g.name}</span>
+                  <em>×{g.multiplier == null ? '待定' : formatPrice(g.multiplier)}</em>
+                </button>
+              ))}
             </div>
             <div className="sidebar-label provider-filter-label">
               <span>所有供应商</span>
