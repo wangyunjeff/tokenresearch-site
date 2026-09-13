@@ -12,8 +12,20 @@ const Admin = lazy(() => import('./portal/Admin'));
 
 import LandingSections, { MatrixReport } from './components/LandingSections';
 import { motion, useScroll, useTransform, useReducedMotion, MotionConfig } from 'motion/react';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Workspace, Paper, Plot, CloseButton } from './components/ResearchUI';
+
+function BrandLockup() {
+  return (
+    <span className="brand-lockup">
+      <img src="/brand-logos/token-research-mark.svg" alt="" aria-hidden="true" />
+      <span>
+        <b>词元智研</b>
+        <small>Token Research</small>
+      </span>
+    </span>
+  );
+}
 
 type Preview =
   | 'workspace'
@@ -159,6 +171,16 @@ function Hero({ open, paused }: { open: (kind: Preview) => void; paused: boolean
 export default function App() {
   const [preview, setPreview] = useState<Preview>(null),
     [paused, setPaused] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    const saved = window.localStorage.getItem('token-research-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
+  useEffect(() => {
+    window.localStorage.setItem('token-research-theme', theme);
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
   const [route, setRoute] = useState(() =>
     location.hash.startsWith('#/') ? location.hash.slice(2) : '',
   );
@@ -195,7 +217,7 @@ export default function App() {
   }, [page]);
   return (
     <MotionConfig reducedMotion={paused ? 'always' : 'user'}>
-      <div className={'site ' + (paused ? 'motion-paused' : '')}>
+      <div className={'site ' + (paused ? 'motion-paused ' : '') + (theme === 'light' ? 'theme-light' : '')}>
         <a
           className="skip-link"
           href="#top"
@@ -208,9 +230,7 @@ export default function App() {
         </a>
         <header className={'site-header ' + (isPortal ? 'portal-header' : '')}>
           <div className="header-inner page-width">
-            <a className="wordmark" href="#top" aria-label="词元智研首页">
-              词元智研
-            </a>
+            <a className="wordmark" href="#top" aria-label="词元智研首页"><BrandLockup /></a>
             <nav className="portal-navigation" aria-label="页面导航">
               {[
                 ['', '首页'],
@@ -238,6 +258,15 @@ export default function App() {
               <a className="button outline app-nav" href="#/app">
                 网页 App <small>开发中</small>
               </a>
+              <button
+                className="theme-toggle"
+                type="button"
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                aria-label={theme === 'light' ? '切换到夜间模式' : '切换到白天模式'}
+                title={theme === 'light' ? '切换到夜间模式' : '切换到白天模式'}
+              >
+                {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+              </button>
             </nav>
           </div>
         </header>
