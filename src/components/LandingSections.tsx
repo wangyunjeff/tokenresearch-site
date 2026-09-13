@@ -55,7 +55,7 @@ function Reveal({
 const universities = [
   ['mit', 'MIT'],
   ['stanford', 'Stanford'],
-  ['tsinghua', 'Tsinghua'],
+  ['tsinghua', 'Tsinghua University'],
   ['harvard', 'Harvard'],
   ['princeton', 'Princeton'],
   ['eth-zurich', 'ETH Zürich'],
@@ -63,6 +63,13 @@ const universities = [
   ['caltech', 'Caltech'],
   ['berkeley', 'Berkeley'],
   ['yale', 'Yale'],
+  ['npu', 'Northwestern Polytechnical University'],
+  ['whu', 'Wuhan University'],
+  ['bit', 'Beijing Institute of Technology'],
+  ['cityu', 'City University of Hong Kong'],
+  ['xaut', "Xi'an University of Technology"],
+  ['xauat', "Xi'an University of Architecture and Technology"],
+  ['seu', 'Southeast University'],
 ];
 function Community() {
   return (
@@ -80,8 +87,8 @@ function Community() {
                   src={'/brand-logos/' + file + '.svg'}
                   alt={name}
                   loading="lazy"
-                  width="130"
-                  height="32"
+                  width="154"
+                  height="36"
                 />
               ))}
             </div>
