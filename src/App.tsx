@@ -302,7 +302,7 @@ export default function App() {
         </main>
         {isPortal && (
           <footer className="portal-footer">
-            <a href="#top">词元智研</a>
+            <a href="#top" className="portal-footer-brand"><BrandLockup /></a>
             <nav>
               <a href="#/models">模型广场</a>
               <a href="#/docs">文档</a>
