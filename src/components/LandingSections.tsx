@@ -735,7 +735,10 @@ function Footer({
             <a className="wordmark" href="#top">
               <span className="brand-lockup">
                 <img src="/brand-logos/token-research-mark.svg" alt="" aria-hidden="true" />
-                <span><b>词元智研</b><small>Token Research</small></span>
+                <span>
+                  <b>词元智研</b>
+                  <small>Token Research</small>
+                </span>
               </span>
             </a>
             <p>
