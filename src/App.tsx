@@ -217,7 +217,11 @@ export default function App() {
   }, [page]);
   return (
     <MotionConfig reducedMotion={paused ? 'always' : 'user'}>
-      <div className={'site ' + (paused ? 'motion-paused ' : '') + (theme === 'light' ? 'theme-light' : '')}>
+      <div
+        className={
+          'site ' + (paused ? 'motion-paused ' : '') + (theme === 'light' ? 'theme-light' : '')
+        }
+      >
         <a
           className="skip-link"
           href="#top"
@@ -230,7 +234,9 @@ export default function App() {
         </a>
         <header className={'site-header ' + (isPortal ? 'portal-header' : '')}>
           <div className="header-inner page-width">
-            <a className="wordmark" href="#top" aria-label="词元智研首页"><BrandLockup /></a>
+            <a className="wordmark" href="#top" aria-label="词元智研首页">
+              <BrandLockup />
+            </a>
             <nav className="portal-navigation" aria-label="页面导航">
               {[
                 ['', '首页'],
@@ -302,7 +308,9 @@ export default function App() {
         </main>
         {isPortal && (
           <footer className="portal-footer">
-            <a href="#top" className="portal-footer-brand"><BrandLockup /></a>
+            <a href="#top" className="portal-footer-brand">
+              <BrandLockup />
+            </a>
             <nav>
               <a href="#/models">模型广场</a>
               <a href="#/docs">文档</a>
