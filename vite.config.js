@@ -18,4 +18,8 @@ function catalogPreview(){return {name:'catalog-preview',configureServer(server)
   }catch(error){res.statusCode=500;res.end(JSON.stringify({error:'Preview unavailable'}));console.error(error);}
  });
 }};}
-export default defineConfig({plugins:[react(),catalogPreview()],server:{host:'127.0.0.1',allowedHosts:['terminal.local']}});
+export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/tokenresearch-site/' : '/',
+  plugins: [react(), catalogPreview()],
+  server: { host: '127.0.0.1', allowedHosts: ['terminal.local'] },
+});
