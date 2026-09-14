@@ -1,6 +1,6 @@
 import snapshot from './data/price-snapshot.json' with { type: 'json' };
 
-const portalRevision = 'catalog-groups-2026-09-11-model-audit';
+const portalRevision = 'catalog-groups-2026-09-14-openai-nondegraded';
 const removedGroups = new Set([
   'sub2api-protocol-openai',
   'sub2api-protocol-anthropic',
@@ -15,6 +15,7 @@ const openAIModels = [
   'gpt-6-astra',
   'gpt-5.6-luna',
 ];
+const nonDegradedOpenAIModels = ['gpt-5.6-sol', 'gpt-6-astra', 'codex-auto-review'];
 const anthropicModels = [
   'claude-haiku-4-5-20251001',
   'claude-opus-4-20250514',
@@ -87,6 +88,7 @@ const curatedGroups = new Map([
   ['sub2api-59', { name: '【国产模型补贴】', models: domesticModels }],
   ['sub2api-60', { name: '【国产模型】', models: domesticModels }],
   ['sub2api-39', { name: '【Grok】Grok-heavy', models: grokModels }],
+  ['sub2api-61', { name: '【Openai】不降智分组', models: nonDegradedOpenAIModels }],
 ]);
 const supplementalModels = [
   'claude-opus-4-5-20251101',
@@ -156,6 +158,28 @@ function upgradePortal(data) {
       Object.entries(group.prices || {}).filter(([id]) => allowed.has(id)),
     );
   }
+  if (!result.groups.some((group) => group.id === 'sub2api-61')) {
+    const plus = result.groups.find((group) => group.id === 'sub2api-2');
+    if (plus) {
+      const modelIds = nonDegradedOpenAIModels.map((code) => modelsByCode.get(code).id);
+      result.groups.push({
+        id: 'sub2api-61',
+        name: '【Openai】不降智分组',
+        multiplier: 2,
+        referenceMultiplier: plus.referenceMultiplier || plus.multiplier || 1,
+        description: '',
+        enabled: true,
+        modelIds,
+        prices: Object.fromEntries(
+          modelIds
+            .filter((id) => plus.prices?.[id])
+            .map((id) => [id, structuredClone(plus.prices[id])]),
+        ),
+        priceBasis: plus.priceBasis || 'observed',
+        priceDate: plus.priceDate || '2026-09-10',
+      });
+    }
+  }
   for (const group of result.groups) {
     const originalGroup = snapshot.groups.find((g) => g.id === group.id);
     if (!originalGroup) continue;
@@ -176,6 +200,14 @@ function upgradePortal(data) {
             : Number(((original[key] * 5) / originalGroup.referenceMultiplier).toPrecision(12)),
         ]),
       );
+    }
+  }
+  const plusGroup = result.groups.find((group) => group.id === 'sub2api-2');
+  const nonDegradedGroup = result.groups.find((group) => group.id === 'sub2api-61');
+  if (plusGroup && nonDegradedGroup) {
+    for (const [id, entry] of Object.entries(nonDegradedGroup.prices || {})) {
+      if (!entry.originalUsd && plusGroup.prices?.[id]?.originalUsd)
+        entry.originalUsd = structuredClone(plusGroup.prices[id].originalUsd);
     }
   }
   result.portalRevision = portalRevision;

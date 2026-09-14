@@ -30,7 +30,7 @@ test('all 166 observed records match the supplied source; null and zero stay dis
   }
   assert.equal(count, 166);
   assert.equal(seed.models.length, 102);
-  assert.equal(seed.groups.length, 10);
+  assert.equal(seed.groups.length, 11);
   assert.equal(formatPrice(modelPrice(model('deepseek-v4-flash'), group(59), 35).cache), '0.00014');
   assert.equal(group(59).modelIds.includes(model('qwen3.8-max-0902').id), false);
   assert.equal(modelPrice(model('qwen3.8-max'), group(59), 35).cache, null);
@@ -126,7 +126,7 @@ test('import resolves group-name collisions without renaming owner groups', () =
   const result = validateCatalog(withPriceImport(existing));
   assert.equal(result.groups.find((g) => g.id === 'owner-plus').name, 'plus');
   assert.equal(result.groups.find((g) => g.id === 'sub2api-2').name, '【OpenAI】plus');
-  assert.equal(new Set(result.groups.map((g) => g.name)).size, 11);
+  assert.equal(new Set(result.groups.map((g) => g.name)).size, 12);
 });
 
 test('very small configured prices remain nonzero in display', () => {
@@ -148,8 +148,9 @@ test('portal update curates provider groups and preserves owner records and mult
   for (const id of ['sub2api-50', 'sub2api-protocol-openai', 'sub2api-protocol-anthropic'])
     assert.ok(!migrated.groups.some((g) => g.id === id));
   assert.equal(migrated.groups.find((g) => g.id === 'mine').multiplier, 2);
-  for (const g of migrated.groups.filter((g) => g.id !== 'mine'))
+  for (const g of migrated.groups.filter((g) => g.id !== 'mine' && g.id !== 'sub2api-61'))
     assert.equal(g.multiplier, snapshot.groups.find((old) => old.id === g.id).multiplier);
+  assert.equal(migrated.groups.find((g) => g.id === 'sub2api-61').multiplier, 2);
   assert.equal(original.groups.length, 14);
   const codes = (id) => {
     const ids = migrated.groups.find((g) => g.id === id).modelIds;
@@ -186,6 +187,8 @@ test('portal update curates provider groups and preserves owner records and mult
     assert.equal(migrated.groups.find((g) => g.id === id).name, name);
     assert.deepEqual(codes(id), openAIModels);
   }
+  assert.equal(migrated.groups.find((g) => g.id === 'sub2api-61').name, '【Openai】不降智分组');
+  assert.deepEqual(codes('sub2api-61'), ['gpt-5.6-sol', 'gpt-6-astra', 'codex-auto-review']);
   for (const [id, name] of [
     ['sub2api-35', '【Anthropic】kiro-高缓存1m上下文'],
     ['sub2api-56', '【Anthropic】Kiro-claude正价版'],
@@ -223,6 +226,26 @@ test('audited Grok group contains only concrete models that passed the probe', (
   assert.deepEqual(g.modelIds.map((id) => seed.models.find((m) => m.id === id).code), [
     'grok', 'grok-4.5', 'grok-4.5-latest', 'grok-4.6', 'grok-4.6-latest', 'grok-latest',
   ]);
+});
+
+test('OpenAI non-degraded group copies Plus prices and applies multiplier 2', () => {
+  const plus = group(2);
+  const nonDegraded = seed.groups.find((g) => g.id === 'sub2api-61');
+  assert.equal(nonDegraded.name, '【Openai】不降智分组');
+  assert.equal(nonDegraded.multiplier, 2);
+  assert.deepEqual(
+    nonDegraded.modelIds.map((id) => seed.models.find((m) => m.id === id).code),
+    ['gpt-5.6-sol', 'gpt-6-astra', 'codex-auto-review'],
+  );
+  for (const code of ['gpt-5.6-sol', 'gpt-6-astra', 'codex-auto-review']) {
+    const m = model(code);
+    const expected = modelPrice(m, plus, seed.divisor);
+    const actual = modelPrice(m, nonDegraded, seed.divisor);
+    approx(actual.input, expected.input * (2 / plus.multiplier));
+    approx(actual.output, expected.output * (2 / plus.multiplier));
+    approx(actual.cache, expected.cache * (2 / plus.multiplier));
+    assert.deepEqual(nonDegraded.prices[m.id].originalUsd, plus.prices[m.id].originalUsd);
+  }
 });
 
 test('USD originals come from the immutable source and remain stable after CNY and multiplier edits', () => {
