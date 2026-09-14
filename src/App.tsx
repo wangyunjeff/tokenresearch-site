@@ -175,7 +175,7 @@ export default function App() {
     if (typeof window === 'undefined') return 'dark';
     const saved = window.localStorage.getItem('token-research-theme');
     if (saved === 'light' || saved === 'dark') return saved;
-    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return 'dark';
   });
   useEffect(() => {
     window.localStorage.setItem('token-research-theme', theme);
