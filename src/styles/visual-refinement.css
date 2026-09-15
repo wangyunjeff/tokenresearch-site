@@ -1086,8 +1086,8 @@ html[data-theme='dark'] {
   .site .site-header .portal-navigation a.active::after {
     bottom: -9px;
   }
-  .site .hero-copy {
-    padding-top: 155px;
+  .site .hero {
+    padding-top: 145px;
   }
   .site .portal-tutorial .tutorial-widget .tutorial-toolbar {
     flex-wrap: wrap;
