@@ -941,6 +941,45 @@ html[data-theme='dark'] {
 .theme-light .hero-stage .research-workspace {
   box-shadow: 0 20px 70px #24443220;
 }
+.theme-light .use-case {
+  background: #edf3ee;
+  border: 1px solid var(--ui-line);
+}
+.theme-light .use-case-copy {
+  background: linear-gradient(var(--ui-surface) 75%, #ffffff00);
+}
+.theme-light .use-case-copy h3 {
+  color: var(--ui-ink);
+}
+.theme-light .use-case-copy p,
+.theme-light .deliverable-card > p {
+  color: var(--ui-muted);
+}
+.site .use-case-click {
+  display: block;
+}
+.site .use-case-copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 28px;
+}
+.theme-light .use-case-arrow {
+  color: var(--ui-accent);
+}
+.theme-light .plan-lines i {
+  background: #d9e5de;
+}
+.theme-light :is(.phone-demo h4, .mini-task-window h4) {
+  color: var(--ui-ink);
+}
+.theme-light :is(.mini-task-window p, .mini-checklist, .mini-trace-window .trace-title) {
+  color: var(--ui-muted);
+}
+.theme-light .team-copy > a {
+  color: var(--ui-accent);
+}
 
 @media (max-width: 1250px) {
   .site .directory-layout {
@@ -1008,6 +1047,48 @@ html[data-theme='dark'] {
   }
 }
 @media (max-width: 700px) {
+  .site .site-header {
+    height: 102px;
+  }
+  .site .site-header .header-inner {
+    display: grid;
+    height: 102px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 55px 47px;
+    align-items: center;
+  }
+  .site .site-header .wordmark {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .site .site-header .header-inner > nav:last-child {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 8px;
+  }
+  .site .site-header .header-inner > nav:last-child .app-nav {
+    display: none;
+  }
+  .site .site-header .portal-navigation {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 22px;
+    overflow-x: auto;
+    transform: none;
+    scrollbar-width: none;
+  }
+  .site .site-header .portal-navigation a {
+    font-size: 11px;
+  }
+  .site .site-header .portal-navigation a.active::after {
+    bottom: -9px;
+  }
+  .site .hero-copy {
+    padding-top: 155px;
+  }
   .site .portal-tutorial .tutorial-widget .tutorial-toolbar {
     flex-wrap: wrap;
     gap: 18px;
