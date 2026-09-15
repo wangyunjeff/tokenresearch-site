@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   Check,
   Copy,
+  ChevronDown,
   LockKeyhole,
   Search,
   SlidersHorizontal,
@@ -84,7 +85,12 @@ const priority = (m: CatalogModel) => {
   return n < 0 ? 100 : n;
 };
 const lockedPricingGroups = new Set(['sub2api-59', 'sub2api-60']);
+function groupLabel(name: string) {
+  const match = name.match(/^【([^】]+)】\s*(.*)$/);
+  return { maker: match?.[1] || '通用', name: match?.[2] || name };
+}
 export default function Models() {
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [result, setResult] = useState<CatalogResponse | null>(null),
     [error, setError] = useState('');
   const [groupId, setGroupId] = useState(''),
@@ -147,7 +153,7 @@ export default function Models() {
           </h1>
           <p>找到合适的模型，也看清每一项价格。</p>
         </div>
-        <a className="p-text-link" href="#/docs/pricing">
+        <a className="p-text-link directory-help" href="#/docs/pricing">
           计价说明 <ArrowUpRight size={16} />
         </a>
       </div>
@@ -164,74 +170,107 @@ export default function Models() {
         </div>
       ) : (
         <div className="directory-layout">
-          <aside className="group-sidebar">
-            <div className="sidebar-label">
-              <SlidersHorizontal size={15} />
-              <span>选择分组</span>
-              <small>{data!.groups.length}</small>
-            </div>
-            <div className="filter-chips group-chips">
-              <button
-                className={groupId === 'all' ? 'selected' : ''}
-                aria-pressed={groupId === 'all'}
-                onClick={() => {
-                  setGroupId('all');
-                  setProvider('all');
-                }}
-              >
-                所有分组
-              </button>
-              {data!.groups.map((g) => {
-                const locked = lockedPricingGroups.has(g.id);
-                return (
-                  <button
-                    key={g.id}
-                    className={`${g.id === groupId ? 'selected' : ''}${locked ? ' locked' : ''}`}
-                    aria-pressed={g.id === groupId}
-                    aria-disabled={locked}
-                    disabled={locked}
-                    title={locked ? '价格核对中，暂不可选' : undefined}
-                    onClick={() => {
-                      setGroupId(g.id);
-                      setProvider('all');
-                    }}
-                  >
-                    <span>
-                      {g.name}
-                      {locked && <LockKeyhole size={12} aria-hidden="true" />}
-                    </span>
-                    <em>×{g.multiplier == null ? '待定' : formatPrice(g.multiplier)}</em>
-                  </button>
-                );
-              })}
-            </div>
-            <div className="sidebar-label provider-filter-label">
-              <span>所有供应商</span>
-            </div>
-            <div className="filter-chips provider-chips">
-              <button
-                className={provider === 'all' ? 'selected' : ''}
-                aria-pressed={provider === 'all'}
-                onClick={() => setProvider('all')}
-              >
-                所有供应商 <small>{groupModels.length}</small>
-              </button>
-              {providers.map((p) => (
+          <aside
+            className={'group-sidebar ' + (filtersOpen ? 'filters-open' : '')}
+            aria-label="模型筛选"
+          >
+            <button
+              className="mobile-panel-toggle"
+              aria-expanded={filtersOpen}
+              aria-controls="model-filters"
+              onClick={() => setFiltersOpen(!filtersOpen)}
+            >
+              <SlidersHorizontal size={16} />
+              <span>
+                分组与供应商<small>{groupId === 'all' ? '所有分组' : group?.name}</small>
+              </span>
+              <ChevronDown size={16} />
+            </button>
+            <div id="model-filters" className="filter-panel-body">
+              <div className="sidebar-label">
+                <SlidersHorizontal size={15} />
+                <span>选择分组</span>
+                <small>{data!.groups.length}</small>
+              </div>
+              <div className="filter-chips group-chips">
                 <button
-                  key={p}
-                  className={provider === p ? 'selected' : ''}
-                  aria-pressed={provider === p}
-                  onClick={() => setProvider(p)}
+                  className={groupId === 'all' ? 'selected' : ''}
+                  aria-pressed={groupId === 'all'}
+                  onClick={() => {
+                    setGroupId('all');
+                    setProvider('all');
+                  }}
                 >
-                  <ModelMark provider={p} />
-                  <span>{p}</span>
-                  <small>{groupModels.filter((m) => m.provider === p).length}</small>
+                  <span className="group-label">
+                    <b>所有分组</b>
+                    <small>比较不同分组的报价</small>
+                  </span>
+                  <span className="group-all-count">
+                    {data!.groups.filter((g) => !lockedPricingGroups.has(g.id)).length}
+                  </span>
                 </button>
-              ))}
+                {data!.groups.map((g) => {
+                  const locked = lockedPricingGroups.has(g.id);
+                  const label = groupLabel(g.name);
+                  return (
+                    <button
+                      key={g.id}
+                      className={`${g.id === groupId ? 'selected' : ''}${locked ? ' locked' : ''}`}
+                      aria-pressed={g.id === groupId}
+                      aria-disabled={locked}
+                      disabled={locked}
+                      title={locked ? '价格核对中，暂不可选' : undefined}
+                      onClick={() => {
+                        setGroupId(g.id);
+                        setProvider('all');
+                        setFiltersOpen(false);
+                      }}
+                    >
+                      <span className="group-label">
+                        <small>
+                          {label.maker}
+                          {locked && (
+                            <>
+                              {' '}
+                              · <LockKeyhole size={11} aria-hidden="true" /> 价格核对中
+                            </>
+                          )}
+                        </small>
+                        <b>{label.name}</b>
+                      </span>
+                      <em>×{g.multiplier == null ? '待定' : formatPrice(g.multiplier)}</em>
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="sidebar-label provider-filter-label">
+                <span>所有供应商</span>
+              </div>
+              <div className="filter-chips provider-chips">
+                <button
+                  className={provider === 'all' ? 'selected' : ''}
+                  aria-pressed={provider === 'all'}
+                  onClick={() => setProvider('all')}
+                >
+                  所有供应商 <small>{groupModels.length}</small>
+                </button>
+                {providers.map((p) => (
+                  <button
+                    key={p}
+                    className={provider === p ? 'selected' : ''}
+                    aria-pressed={provider === p}
+                    onClick={() => setProvider(p)}
+                  >
+                    <ModelMark provider={p} />
+                    <span>{p}</span>
+                    <small>{groupModels.filter((m) => m.provider === p).length}</small>
+                  </button>
+                ))}
+              </div>
+              <a className="sidebar-link" href="#/admin">
+                管理模型与分组 <ArrowUpRight size={14} />
+              </a>
             </div>
-            <a className="sidebar-link" href="#/admin">
-              管理模型与分组 <ArrowUpRight size={14} />
-            </a>
           </aside>
           <section className="models-content" aria-label="模型列表">
             <div className="directory-tools">

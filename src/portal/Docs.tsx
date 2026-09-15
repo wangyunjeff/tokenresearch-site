@@ -5,6 +5,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
+  ChevronDown,
   Download,
   Search,
   Terminal,
@@ -139,6 +140,8 @@ function PricingArticle() {
   );
 }
 export default function Docs({ id = 'overview' }: { id?: string }) {
+  const [navigationOpen, setNavigationOpen] = useState(false);
+  useEffect(() => setNavigationOpen(false), [id]);
   const [query, setQuery] = useState(''),
     [module, setModule] = useState<DocsModule | null>(null),
     [error, setError] = useState('');
@@ -174,66 +177,88 @@ export default function Docs({ id = 'overview' }: { id?: string }) {
   return (
     <div className="portal-page docs-page">
       <div className="docs-layout">
-        <aside className="docs-sidebar">
-          <a className="docs-brand" href="#/docs">
-            <BookOpen size={19} />
-            文档<span>DOCS</span>
-          </a>
-          <label className="p-search">
-            <Search size={15} />
-            <input
-              placeholder="搜索文档"
-              aria-label="搜索文档"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </label>
-          <a className={'doc-home-link ' + (id === 'overview' ? 'active' : '')} href="#/docs">
-            所有 Agent 工具 <ArrowRight size={14} />
-          </a>
-          {agentCategories.map((category) => (
-            <div className="doc-nav-group agent-nav-group" key={category}>
-              {filteredTools.some((t) => t.category === category) && <span>{category}</span>}
-              {filteredTools
-                .filter((t) => t.category === category)
-                .map((t) => (
+        <aside
+          className={'docs-sidebar ' + (navigationOpen ? 'navigation-open' : '')}
+          aria-label="文档导航"
+        >
+          <button
+            className="mobile-panel-toggle"
+            aria-expanded={navigationOpen}
+            aria-controls="docs-navigation"
+            onClick={() => setNavigationOpen(!navigationOpen)}
+          >
+            <BookOpen size={17} />
+            <span>
+              文档目录<small>{tool?.name || doc?.title || '浏览文档'}</small>
+            </span>
+            <ChevronDown size={16} />
+          </button>
+          <div id="docs-navigation" className="docs-navigation-body">
+            <a className="docs-brand" href="#/docs">
+              <BookOpen size={19} />
+              文档<span>DOCS</span>
+            </a>
+            <label className="p-search">
+              <Search size={15} />
+              <input
+                placeholder="搜索文档"
+                aria-label="搜索文档"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </label>
+            <a className={'doc-home-link ' + (id === 'overview' ? 'active' : '')} href="#/docs">
+              所有 Agent 工具 <ArrowRight size={14} />
+            </a>
+            {agentCategories.map((category) => (
+              <div className="doc-nav-group agent-nav-group" key={category}>
+                {filteredTools.some((t) => t.category === category) && <span>{category}</span>}
+                {filteredTools
+                  .filter((t) => t.category === category)
+                  .map((t) => (
+                    <a
+                      key={t.id}
+                      href={'#/docs/' + t.id}
+                      className={id === t.id ? 'active' : ''}
+                      aria-current={id === t.id ? 'page' : undefined}
+                    >
+                      <span>{t.name}</span>
+                      {t.ready ? (
+                        <span className="tool-ready-dot" title="完整教程" />
+                      ) : (
+                        <small>筹备中</small>
+                      )}
+                    </a>
+                  ))}
+              </div>
+            ))}
+            {!!references.length && (
+              <div className="doc-nav-group">
+                <span>通用参考与 Codex 配置</span>
+                {references.map((d) => (
                   <a
-                    key={t.id}
-                    href={'#/docs/' + t.id}
-                    className={id === t.id ? 'active' : ''}
-                    aria-current={id === t.id ? 'page' : undefined}
+                    key={d.id}
+                    href={'#/docs/' + d.id}
+                    className={id === d.id ? 'active' : ''}
+                    aria-current={id === d.id ? 'page' : undefined}
                   >
-                    <span>{t.name}</span>
-                    {t.ready ? (
-                      <span className="tool-ready-dot" title="完整教程" />
-                    ) : (
-                      <small>筹备中</small>
-                    )}
+                    {d.title}
+                    <ArrowRight size={13} />
                   </a>
                 ))}
-            </div>
-          ))}
-          {!!references.length && (
-            <div className="doc-nav-group">
-              <span>通用参考与 Codex 配置</span>
-              {references.map((d) => (
-                <a key={d.id} href={'#/docs/' + d.id} className={id === d.id ? 'active' : ''}>
-                  {d.title}
-                  <ArrowRight size={13} />
-                </a>
-              ))}
-            </div>
-          )}
-          {!filteredTools.length && !references.length && (
-            <p className="p-muted">没有找到相关工具或文档</p>
-          )}
-          <a className="docs-download" href="/downloads/codex-config.zip" download>
-            <Download size={18} />
-            <span>
-              Codex 配置文件<small>config.toml + auth.json</small>
-            </span>
-            <ArrowUpRight size={14} />
-          </a>
+              </div>
+            )}
+            {!filteredTools.length && !references.length && (
+              <p className="p-muted">没有找到相关工具或文档</p>
+            )}
+            <a className="docs-download" href="/downloads/codex-config.zip" download>
+              <Download size={18} />
+              <span>
+                Codex 配置文件<small>config.toml + auth.json</small>
+              </span>
+              <ArrowUpRight size={14} />
+            </a>
+          </div>
         </aside>
         <article
           className={'doc-reading ' + (id === 'codex' ? 'tutorial-reading' : '')}
